@@ -117,7 +117,7 @@ a {
     top:5px;
 
     @media (max-width: 780px) {
-        height: 20rem; 
+        height: 16rem; 
        }
   }
 }

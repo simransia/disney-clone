@@ -43,9 +43,13 @@ export const Carousel = styled(Slider)`
 
 .slick-list {
   overflow:initial;
-  direction:ltr; 
+
+
+ .slick-track{
+  transform: translate3d(0, 0, 0)!important;
 }
 
+}
 `
 
 export const Wrap = styled.div`
