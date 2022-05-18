@@ -7,7 +7,7 @@ import { auth, provider } from '../firebase'
 import {FaBars} from "react-icons/fa";
 
 function Header(props) {
-  const dispatch = useDispatch()
+const dispatch = useDispatch()
 const navigate= useNavigate()
 const username= useSelector(selectUserName);
 const userphoto= useSelector(selectUserPhoto)
@@ -16,7 +16,7 @@ useEffect(()=>{
   auth.onAuthStateChanged( async(user)=>{
     if(user){
       setUser(user);
-      navigate("/home");
+      navigate("/");
     }
   })
 }, [username])
@@ -99,7 +99,7 @@ const Nav = styled.nav`
    align-items:center;
    justify-content:space-between;
    padding:0 0 0 36px;
-   z-index:3;
+   z-index:5;
 
    .bar{
      display:flex;
@@ -107,20 +107,22 @@ const Nav = styled.nav`
    }
    .icon{
      margin-right: 10px;
+     margin-top:5px;
      color:#A0A3A8;
+     font-size:20px;
    }
-
+   
 .navMenu{ 
-height:100%;
-font-weight:300;
-font-size:14px;
-margin-top:8px;
-align-items:center;
-display:flex;
-flex-flow:row wrap;
-position:relative;
-margin-right:auto;
-margin-left:25px;
+  height:100%;
+  font-weight:300;
+  font-size:14px;
+  margin-top:8px;
+  align-items:center;
+  display:flex;
+  flex-flow:row wrap;
+  position:relative;
+  margin-right:auto;
+  margin-left:25px;
 
 a{
     display:flex;

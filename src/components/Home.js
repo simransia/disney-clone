@@ -10,6 +10,7 @@ import DisneyOriginals from './DisneyOriginals';
 import AnimalsAndNature from './AnimalsAndNature';
 import MickeyAndFriends from './MickeyAndFriends';
 import DisneyJunior from './DisneyJunior';
+import Footer from './Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import db from "../firebase";
@@ -32,8 +33,7 @@ function Home(props) {
   useEffect(() => {
     db.collection("movies").onSnapshot((snapshot) => {
       snapshot.docs.map((doc) => {
-        console.log(recommends);
-        console.log(newToDisneys);
+        
         switch (doc.data().type) {
           case "recommend":
             recommends = [...recommends, { id: doc.id, ...doc.data() }];
@@ -95,6 +95,7 @@ function Home(props) {
       <AnimalsAndNature />
       <MickeyAndFriends />
       <DisneyJunior />
+      <Footer/>
     </Container>
   );
 };
@@ -110,7 +111,7 @@ padding: 0 calc(3.5vw + 5px);
 
 
 &:after {
-  background: url("/images/home-background.png") center center / cover
+  background: url("/images/home-background.png") center center / cover;
   no-repeat fixed;
   content: "";
   position: absolute;

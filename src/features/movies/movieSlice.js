@@ -36,7 +36,7 @@ export const selectWomen = (state) => state.movie.women;
 export const selectHitMovies = (state) => state.movie.hitMovie;
 export const selectDisneyOriginals = (state) => state.movie.disneyOriginal;
 export const selectanimalsAndNature = (state) => state.movie.animalsAndNature;
-export const selectMickeyAndFriends = (state) => state.movie.mickeyAndFriends;
+export const selectMickeyAndFriends = (state) => state.movie.mickeyAndFriend;
 export const selectDisneyJuniorSeries = (state) => state.movie.disneyJuniorSeries;
 
 

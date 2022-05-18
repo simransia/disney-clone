@@ -20,8 +20,8 @@ function Women(props) {
       {
         breakpoint:1024,
         settings: {
-          slidesToShow: 7,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 4,
         }
       },
       {
@@ -42,13 +42,13 @@ function Women(props) {
         {
           movies && movies.map((movie, key) => (
 
-            <Link to={'/detail/' + movie.id}>
-              <Wrap  key={key}>
+            <Link to={'/detail/' + movie.id} key={key}>
+              <Wrap >
               <span>
                   <h2>{movie.title}</h2>
                   <h3>{movie.subTitle}</h3>
                   <p className="grey"><b>{movie.description.slice(0, 55)}</b>...</p>
-                  <p className="grey"> <AiOutlinePlus />ADD TO WATCHLIST</p>
+                  <p className="grey"> <AiOutlinePlus /> ADD TO WATCHLIST</p>
                 </span>
                 <img src={movie.cardImg} />
               </Wrap>
