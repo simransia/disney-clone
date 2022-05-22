@@ -64,6 +64,9 @@ a {
   display:flex;
   justify-content:space-evenly;
   
+  @media (max-width: 780px) {
+    padding: 5px;
+   }
 
   span{
     
@@ -115,6 +118,7 @@ a {
     height: 25rem; 
     position:relative;
     top:5px;
+    border-radius:4px;
 
     @media (max-width: 780px) {
         height: 16rem; 

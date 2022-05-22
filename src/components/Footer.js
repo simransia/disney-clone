@@ -59,9 +59,19 @@ justify-content:center;
 
 .first{ 
 width:60%;
-
 margin-top:10px;
-p{
+ a{
+   margin-right:12px;
+   margin-bottom:5px;
+   float:left;
+
+   @media (max-width:780px) {
+    font-size:0.6rem;
+   }
+ }
+
+ p{
+  clear:both;
   font-size:0.6rem;
   width:80%;
 
@@ -69,11 +79,8 @@ p{
     font-size:0.5rem;
    }
 }
- a{
-   margin-right:20px;
- }
- @media (max-width:780px) {
-  width:55%;
+@media (max-width:780px) {
+  width:56%;
  }
 }
 
@@ -123,6 +130,7 @@ p{
   width:20%;
   
 .hotstar{
+  text-align:center;
    font-weight:bold;
    display:flex;
    flex-direction:column;
