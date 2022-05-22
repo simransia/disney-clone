@@ -40,14 +40,8 @@ export const Carousel = styled(Slider)`
 }
 }
 
-
 .slick-list {
   overflow:initial;
-
-
- .slick-track{
-  transform: translate3d(0, 0, 0)!important;
-}
 
 }
 `
