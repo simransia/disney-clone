@@ -64,9 +64,16 @@ margin-top:10px;
 p{
   font-size:0.6rem;
   width:80%;
+
+  @media (max-width:780px) {
+    font-size:0.5rem;
+   }
 }
  a{
    margin-right:20px;
+ }
+ @media (max-width:780px) {
+  width:55%;
  }
 }
 
@@ -105,6 +112,11 @@ p{
     font-size:0.2rem;
    }
   }
+  @media (max-width:780px) {
+    width:22%;
+    margin-left:-20px;
+    margin-right:10px;
+   }
 }
 
 .third{
@@ -151,8 +163,8 @@ p{
 
     @media (max-width:780px) {
       height:1.7rem;
-      width:3.5rem;
-      font-size:0.2rem;
+      width:4rem;
+      font-size:0.3rem;
     }
    
   }
