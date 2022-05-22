@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { AiOutlinePlus } from 'react-icons/ai';
 import { useSelector } from "react-redux";
 import { selectNewDisney } from "../features/movies/movieSlice"
@@ -30,7 +28,7 @@ function NewToDisney(props) {
           slidesToShow: 3,
           slidesToScroll: 3,
         }
-      },
+      }
     ]
   };
 

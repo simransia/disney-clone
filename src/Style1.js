@@ -65,7 +65,7 @@ a {
   justify-content:space-evenly;
   
   @media (max-width: 780px) {
-    padding: 5px;
+    padding: 8px;
    }
 
   span{
@@ -120,8 +120,10 @@ a {
     top:5px;
     border-radius:4px;
 
-    @media (max-width: 780px) {
-        height: 16rem; 
+    @media (max-width:550px) {
+        min-width:98vw;
+        padding:0 17px;
+        height: 14rem; 
        }
   }
 }
@@ -198,10 +200,14 @@ export const Container = styled.div`
         min-width:40rem;
         }
       @media (max-width: 780px) {
+        border-radius:3px;
         min-width:100vw;
-        border-radius:2px;
-       
+        padding:0px 0px;
+        height:20rem;
        }
+       @media (max-width:550px) {
+         height:15rem;
+        }
   }
   a:after {
     border-radius:7px;
@@ -270,12 +276,12 @@ export const Container = styled.div`
         }
         @media (max-width:780px) {
             position:absolute;
-            bottom:11px;
+            bottom:3px;
             left:-11px;
             font-size:20px;
             background-color:rgba(0, 0, 0, 0.2);
             width:100vw;
-    }
+        }
 }
  
 `

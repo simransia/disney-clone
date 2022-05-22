@@ -107,6 +107,7 @@ const Nav = styled.nav`
    }
    .icon{
      margin-right: 10px;
+     margin-left:-8px;
      margin-top:5px;
      color:#A0A3A8;
      font-size:20px;
@@ -194,7 +195,7 @@ color:#A0A3A9;
 margin-top:8px;
 font-size:14px;
 letter-spacing:0.3px;
-padding-right:10px
+padding-right:14px
 `
 
 const UserImage= styled.img`

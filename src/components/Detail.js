@@ -140,12 +140,11 @@ function Detail(props) {
 
         {
           movies && movies.map((movie, key) => (
-          movie.id!=id? 
+          movie.id!=id ? 
             <Link to={'/detail/' + movie.id} key={key}>
               <Cell >
                 <span>
                   <h2>{movie.title}</h2>
-                  {console.log(movie.title)}
                   <h3>{movie.subTitle}</h3>
                   <p className="grey"><b>{movie.description.slice(0, 55)}</b>...</p>
                   <p className="grey"> <AiOutlinePlus /> ADD TO WATCHLIST</p>
@@ -153,7 +152,7 @@ function Detail(props) {
                 <img src={movie.cardImg} />
 
               </Cell>
-            </Link>:""
+            </Link> : ""
           
           )
           )
