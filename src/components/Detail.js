@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
@@ -105,10 +106,12 @@ function Detail(props) {
   };
 
   return (
+    <> 
+    <Header/>
     <Background>
       <Container>
         <Wrap>
-          <a>
+          <a href={'/detail/' + id + '/watch'}>
             <span>
               <p className='subscribe'>SUBSCRIBER</p>
               <h2>{detailData.title}</h2>
@@ -160,7 +163,7 @@ function Detail(props) {
       </Carousel >
 
     </Background>
-
+    </>
   )
 }
 

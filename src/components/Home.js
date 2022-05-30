@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageSlider from './ImageSlider';
 import Viewers from './Viewers';
+import Header from './Header';
 import Recommended from './Recommended';
 import NewToDisney from './NewToDisney';
 import Women from './Women';
@@ -84,6 +85,8 @@ function Home(props) {
   }, [userName]);
 
   return (
+    <> 
+    <Header />
     <Container>
       <ImageSlider />
       <Viewers />
@@ -97,6 +100,7 @@ function Home(props) {
       <DisneyJunior />
       <Footer/>
     </Container>
+    </> 
   );
 };
 

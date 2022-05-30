@@ -18,7 +18,6 @@ function Footer() {
         <p>© 2022 STAR. All Rights Reserved. HBO, Home Box Office and all related channel and programming logos are service marks of, and all related programming visuals and elements are the property of, Home Box Office, Inc. All rights reserved.</p>
       </div>
      
-
       <div className="second">
         <p>Connect with us</p>
         <div className='inner-first'>
@@ -46,6 +45,7 @@ function Footer() {
         </button>
         </div>
       </div>
+      
     </FootNote >
   )
 };
@@ -73,15 +73,24 @@ justify-content:center;
    }
   }
 
+  .links{
+    width:80%;
+  }
+
  p{
    clear:both;
    font-size:0.56rem;
    width:80%;
+   margin-left:10px;;
 
    @media (max-width:780px) {
-    font-size:0.5rem;
+    font-size:0.6rem;
     }
   }
+ 
+  @media (max-width:780px) {
+    width:95vw;
+    }
 }
 
 .second {
@@ -101,7 +110,10 @@ justify-content:center;
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-direction:column;
+
+    @media (max-width:780px) {
+      flex-direction:column;
+     }
  }
   button{ 
     display:flex;
@@ -112,7 +124,7 @@ justify-content:center;
     background-color:#192133;
     border:none;
     border-radius:5px;
-    margin-left:5px;
+    margin-left:8px;
     margin-bottom:8px;
 
   @media (max-width:780px) {
@@ -123,8 +135,8 @@ justify-content:center;
   }
   @media (max-width:780px) {
     width:22%;
-    margin-left:-20px;
-    margin-right:10px;
+    margin-left:25px;
+    float:left;
    }
 }
 
@@ -178,6 +190,17 @@ justify-content:center;
     }
    
   }
+
+  @media (max-width:780px) {
+    display:block;
+    float:right;
+    margin-right:80px;
+  }
+}
+ 
+@media (max-width:780px) {
+  display:block;
+  float:left;
 }
 
 
