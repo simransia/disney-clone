@@ -8,10 +8,27 @@ import {
   setSignOutState,
 } from "../../utils/user/userSlice";
 import { auth, provider } from "../../utils/firebase";
-import { FaBars } from "react-icons/fa";
-import { Nav, Logo, Login, SignOut, UserImage, DropDown } from "./HeaderStyles";
 
-const Header = () => {
+import {
+  Nav,
+  Logo,
+  Login,
+  SignOut,
+  UserImage,
+  DropDown,
+} from "./SidebarStyles";
+import {
+  CircleUser,
+  Clapperboard,
+  Eclipse,
+  Home,
+  LayoutTemplate,
+  RadioIcon,
+  Search,
+  Tv,
+} from "lucide-react";
+
+const Sidebar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const username = useSelector(selectUserName);
@@ -59,30 +76,40 @@ const Header = () => {
 
   return (
     <Nav>
-      <div className="bar">
-        <FaBars className="icon" />
-        <Logo>
-          <img src="/images/logo.svg" alt="Disney" />
-        </Logo>
-      </div>
       <div className="navMenu">
+        <div className="logo">
+          <Logo>
+            <img src="/images/logo.svg" alt="Disney" />
+          </Logo>
+        </div>
+        <a href="/">
+          <CircleUser />
+          <span>My Space</span>
+        </a>
+        <a href="/">
+          <Search /> <span>Search</span>
+        </a>
+        <a href="/">
+          <Home />
+          <span>Home</span>
+        </a>
         <a href="/Tv">
-          <span>TV</span>
+          <Tv /> <span>TV</span>
         </a>
         <a href="/movies">
-          <span>Movies</span>
+          <Clapperboard /> <span>Movies</span>
         </a>
         <a href="/sports">
-          <span>Sports</span>
+          <Eclipse /> <span>Sports</span>
         </a>
         <a href="/disney">
-          <span>Disney+</span>
+          <LayoutTemplate /> <span>Category</span>
         </a>
-        <a href="/kids">
+        {/* <a href="/kids">
           <img src="/images/kids.PNG" alt="" />
-        </a>
+        </a> */}
       </div>
-      {!username ? (
+      {/* {!username ? (
         <Login onClick={handleAuth}>LOGIN</Login>
       ) : (
         <SignOut>
@@ -91,9 +118,9 @@ const Header = () => {
             <span onClick={handleAuth}>Sign Out</span>
           </DropDown>
         </SignOut>
-      )}
+      )} */}
     </Nav>
   );
 };
 
-export default Header;
+export default Sidebar;

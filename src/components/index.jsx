@@ -8,7 +8,7 @@ import NewToDisney from "./NewToDisney";
 import Recommended from "./Recommended";
 import Women from "./Women";
 import Footer from "./Footer";
-import Header from "./Header/Header";
+import Sidebar from "./Sidebar/Sidebar";
 import ImageSlider from "./ImageSlider";
 
 export {
@@ -23,5 +23,5 @@ export {
   Recommended,
   Women,
   Footer,
-  Header,
+  Sidebar,
 };

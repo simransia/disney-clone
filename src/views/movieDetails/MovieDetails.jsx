@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Header from "../../components/Header";
+import { Sidebar } from "../../components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
@@ -38,9 +38,11 @@ function MovieDetails(props) {
 
   const { movies, detailData, id } = useDetailData();
 
+  console.log(movies, detailData);
+
   return (
     <Fragment>
-      <Header />
+      <Sidebar />
       <Background>
         <Container>
           <Wrap>
@@ -89,7 +91,7 @@ function MovieDetails(props) {
                         <AiOutlinePlus /> ADD TO WATCHLIST
                       </p>
                     </span>
-                    <img src={movie.cardImg} />
+                    <img src={movie.cardImg} alt="" />
                   </Cell>
                 </Link>
               ) : (

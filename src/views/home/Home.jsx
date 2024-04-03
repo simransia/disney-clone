@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import {
   Viewers,
   ImageSlider,
@@ -11,18 +11,18 @@ import {
   Recommended,
   Women,
   Footer,
-  Header,
+  Sidebar,
 } from "../../components";
 import useAddDataToStore from "../../hooks/useAddDataToStore";
-import { Container } from "./homeStyles";
+import { Container, Content } from "./homeStyles";
 
 const Home = () => {
   useAddDataToStore();
 
   return (
-    <Fragment>
-      <Header />
-      <Container>
+    <Container>
+      <Sidebar />
+      <Content>
         <ImageSlider />
         <Viewers />
         <Recommended />
@@ -34,8 +34,8 @@ const Home = () => {
         <MickeyAndFriends />
         <DisneyJunior />
         <Footer />
-      </Container>
-    </Fragment>
+      </Content>
+    </Container>
   );
 };
 
