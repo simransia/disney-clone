@@ -3,7 +3,7 @@ import { ImCross, ImArrowLeft2 } from "react-icons/im";
 import useSubscribeData from "../../hooks/useSubscribeData";
 import { Container, Content, BgImage, Subscribe } from "./WatchStyles";
 
-const Watch = () => {
+const WatchMovie = () => {
   const { detailData, selectedPlan, handlePlanChange } = useSubscribeData();
 
   return (
@@ -130,4 +130,4 @@ const Watch = () => {
     </Container>
   );
 };
-export default Watch;
+export default WatchMovie;
