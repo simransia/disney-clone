@@ -84,55 +84,55 @@ const Sidebar = () => {
   return (
     <Nav>
       <div className="navMenu">
-        <div className="logo">
-          <Logo>
-            <img src="/images/logo.svg" alt="Disney" />
-          </Logo>
+        <Logo>
+          <img src="/images/logo.svg" alt="Disney" />
+        </Logo>
+        <div className="links">
+          <a
+            href={ROUTES.PROFILE}
+            className={pathname === ROUTES.PROFILE ? "active" : ""}
+          >
+            <CircleUser />
+            <span>My Space</span>
+          </a>
+          <a
+            href={ROUTES.SEARCH}
+            className={pathname === ROUTES.SEARCH ? "active" : ""}
+          >
+            <Search /> <span>Search</span>
+          </a>
+          <a
+            href={ROUTES.HOME}
+            className={pathname === ROUTES.HOME ? "active" : ""}
+          >
+            <Home />
+            <span>Home</span>
+          </a>
+          <a
+            href={ROUTES.SHOWS}
+            className={pathname === ROUTES.SHOWS ? "active" : ""}
+          >
+            <Tv /> <span>TV</span>
+          </a>
+          <a
+            href={ROUTES.MOVIES}
+            className={pathname === ROUTES.MOVIES ? "active" : ""}
+          >
+            <Clapperboard /> <span>Movies</span>
+          </a>
+          <a
+            href={ROUTES.SPORTS}
+            className={pathname === ROUTES.SPORTS ? "active" : ""}
+          >
+            <Eclipse /> <span>Sports</span>
+          </a>
+          <a
+            href={ROUTES.CATEGORIES}
+            className={pathname === ROUTES.CATEGORIES ? "active" : ""}
+          >
+            <LayoutTemplate /> <span>Categories</span>
+          </a>
         </div>
-        <a
-          href={ROUTES.PROFILE}
-          className={pathname === ROUTES.PROFILE ? "active" : ""}
-        >
-          <CircleUser />
-          <span>My Space</span>
-        </a>
-        <a
-          href={ROUTES.SEARCH}
-          className={pathname === ROUTES.SEARCH ? "active" : ""}
-        >
-          <Search /> <span>Search</span>
-        </a>
-        <a
-          href={ROUTES.HOME}
-          className={pathname === ROUTES.HOME ? "active" : ""}
-        >
-          <Home />
-          <span>Home</span>
-        </a>
-        <a
-          href={ROUTES.SHOWS}
-          className={pathname === ROUTES.SHOWS ? "active" : ""}
-        >
-          <Tv /> <span>TV</span>
-        </a>
-        <a
-          href={ROUTES.MOVIES}
-          className={pathname === ROUTES.MOVIES ? "active" : ""}
-        >
-          <Clapperboard /> <span>Movies</span>
-        </a>
-        <a
-          href={ROUTES.SPORTS}
-          className={pathname === ROUTES.SPORTS ? "active" : ""}
-        >
-          <Eclipse /> <span>Sports</span>
-        </a>
-        <a
-          href={ROUTES.CATEGORIES}
-          className={pathname === ROUTES.CATEGORIES ? "active" : ""}
-        >
-          <LayoutTemplate /> <span>Categories</span>
-        </a>
         {/* <a href="/kids">
           <img src="/images/kids.PNG" alt="" />
         </a> */}

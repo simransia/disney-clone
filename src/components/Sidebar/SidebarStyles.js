@@ -16,16 +16,21 @@ const Nav = styled.nav`
   .navMenu {
     height: 100%;
     font-weight: 300;
-    margin-top: 8px;
-    align-items: start;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
     position: relative;
 
     .logo {
       margin-bottom: 40px;
+    }
+
+    .links {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
     }
 
     a {
@@ -120,13 +125,15 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.a`
-  width: 80px;
+  width: 100%;
   max-height: 70px;
   font-size: 0;
   display: inline-block;
+  margin-top: 28px;
   img {
     display: block;
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
   }
 `;
 
