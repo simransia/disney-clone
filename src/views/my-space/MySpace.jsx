@@ -20,7 +20,7 @@ const MyPage = () => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUser(user);
-        navigate("/");
+        // navigate("/");
       }
     });
   }, [username]);
