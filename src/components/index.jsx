@@ -10,6 +10,7 @@ import Women from "./Women";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar/Sidebar";
 import ImageSlider from "./ImageSlider";
+import Layout from "./Layout/Layout";
 
 export {
   Viewers,
@@ -24,4 +25,5 @@ export {
   Women,
   Footer,
   Sidebar,
+  Layout,
 };

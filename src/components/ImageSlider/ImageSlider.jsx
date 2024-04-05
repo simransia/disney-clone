@@ -1,7 +1,8 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Carousel, Wrap } from "../views/movieDetails/movieDetailsStyles";
+import { Carousel, Wrap } from "../../views/movieDetails/movieDetailsStyles";
+import { SliderContainer } from "./SliderStyles";
 
 function ImageSlider(props) {
   let settings = {
@@ -10,11 +11,12 @@ function ImageSlider(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    centerMode: false,
+    // autoplay: true,
   };
 
   return (
-    <div>
+    <SliderContainer>
       <Carousel {...settings}>
         <Wrap>
           <a>
@@ -102,7 +104,7 @@ function ImageSlider(props) {
           </a>
         </Wrap>
       </Carousel>
-    </div>
+    </SliderContainer>
   );
 }
 

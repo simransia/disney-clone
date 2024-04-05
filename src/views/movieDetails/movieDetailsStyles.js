@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import styled from "styled-components";
 
 export const Carousel = styled(Slider)`
+  padding-top: 5px;
+
   .slick-prev:before,
   .slick-next:before {
     font-family: "FontAwesome";
@@ -66,7 +68,7 @@ export const Wrap = styled.div`
 
     span {
       margin-top: 45px;
-      margin-left: 50px;
+      margin-left: 45px;
       white-space: wrap;
       color: #ffffff;
       line-height: 1.7;
@@ -109,15 +111,23 @@ export const Wrap = styled.div`
     margin-left: auto;
     max-width: 100%;
     width: 50rem;
-    height: 30rem;
+    height: 31rem;
     position: relative;
-    top: 5px;
     border-radius: 4px;
+
+    @media (max-width: 1324px) {
+      height: 29rem;
+    }
+
+    @media (max-width: 768px) {
+      height: 20rem;
+      margin: 0;
+    }
 
     @media (max-width: 550px) {
       min-width: 98vw;
       padding: 0 17px;
-      height: 14rem;
+      height: 15rem;
     }
   }
 
@@ -130,9 +140,12 @@ export const Wrap = styled.div`
     bottom: 0;
     left: -10px;
     overflow: hidden;
-    box-shadow: inset 610px 0 100px 0 #030b17;
+    box-shadow: inset 620px 0 100px 0 #030b17;
     z-index: 2;
 
+    @media (max-width: 1350px) {
+      box-shadow: inset 540px 0 100px 0 #030b17;
+    }
     @media (max-width: 1295px) {
       box-shadow: inset 520px 0 100px 0 #030b17;
     }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
   Viewers,
   ImageSlider,
@@ -10,32 +10,25 @@ import {
   NewToDisney,
   Recommended,
   Women,
-  Footer,
-  Sidebar,
 } from "../../components";
 import useAddDataToStore from "../../hooks/useAddDataToStore";
-import { Container, Content } from "./homeStyles";
 
 const Home = () => {
   useAddDataToStore();
 
   return (
-    <Container>
-      <Sidebar />
-      <Content>
-        <ImageSlider />
-        <Viewers />
-        <Recommended />
-        <NewToDisney />
-        <Women />
-        <HitMovies />
-        <DisneyOriginals />
-        <AnimalsAndNature />
-        <MickeyAndFriends />
-        <DisneyJunior />
-        <Footer />
-      </Content>
-    </Container>
+    <Fragment>
+      <ImageSlider />
+      <Viewers />
+      <Recommended />
+      <NewToDisney />
+      <Women />
+      <HitMovies />
+      <DisneyOriginals />
+      <AnimalsAndNature />
+      <MickeyAndFriends />
+      <DisneyJunior />
+    </Fragment>
   );
 };
 

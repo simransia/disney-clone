@@ -42,7 +42,6 @@ function MovieDetails(props) {
 
   return (
     <Fragment>
-      <Sidebar />
       <Background>
         <Container>
           <Wrap>

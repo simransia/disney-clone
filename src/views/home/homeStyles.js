@@ -6,22 +6,13 @@ const Container = styled.div`
 
 const Content = styled.div`
   position: relative;
-  min-height: calc(100vh - 250px);
+  min-height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
   display: block;
   padding: 0 calc(3.5vw + 5px);
   padding-left: 120px;
-
-  &:after {
-    background: url("/images/home-background.png") center center / cover
-      no-repeat fixed;
-    content: "";
-    position: absolute;
-    inset: 0px;
-    opacity: 1;
-    z-index: -1;
-  }
 
   @media (max-width: 640px) {
     padding-left: calc(3.5vw + 5px);

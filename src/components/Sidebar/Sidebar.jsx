@@ -27,6 +27,7 @@ import {
   Search,
   Tv,
 } from "lucide-react";
+import { ROUTES } from "../../constants/routes";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -82,43 +83,33 @@ const Sidebar = () => {
             <img src="/images/logo.svg" alt="Disney" />
           </Logo>
         </div>
-        <a href="/">
+        <a href={ROUTES.PROFILE}>
           <CircleUser />
           <span>My Space</span>
         </a>
-        <a href="/">
+        <a href={ROUTES.SEARCH}>
           <Search /> <span>Search</span>
         </a>
-        <a href="/">
+        <a href={ROUTES.HOME}>
           <Home />
           <span>Home</span>
         </a>
-        <a href="/Tv">
+        <a href={ROUTES.SHOWS}>
           <Tv /> <span>TV</span>
         </a>
-        <a href="/movies">
+        <a href={ROUTES.MOVIES}>
           <Clapperboard /> <span>Movies</span>
         </a>
-        <a href="/sports">
+        <a href={ROUTES.SPORTS}>
           <Eclipse /> <span>Sports</span>
         </a>
-        <a href="/disney">
-          <LayoutTemplate /> <span>Category</span>
+        <a href={ROUTES.CATEGORIES}>
+          <LayoutTemplate /> <span>Categories</span>
         </a>
         {/* <a href="/kids">
           <img src="/images/kids.PNG" alt="" />
         </a> */}
       </div>
-      {/* {!username ? (
-        <Login onClick={handleAuth}>LOGIN</Login>
-      ) : (
-        <SignOut>
-          <UserImage src={userphoto} alt={username}></UserImage>
-          <DropDown>
-            <span onClick={handleAuth}>Sign Out</span>
-          </DropDown>
-        </SignOut>
-      )} */}
     </Nav>
   );
 };
