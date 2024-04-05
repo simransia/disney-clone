@@ -1,7 +1,61 @@
-import React from "react";
-import { Container } from "./mySpaceStyles";
+import React, { useEffect } from "react";
+import { Container, SignOut, UserImage, DropDown } from "./mySpaceStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { auth, provider } from "../../utils/firebase";
+import {
+  selectUserPhoto,
+  selectUserName,
+  setUserLoginDetails,
+  setSignOutState,
+} from "../../utils/user/userSlice";
 
 const MyPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const username = useSelector(selectUserName);
+  const userphoto = useSelector(selectUserPhoto);
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user);
+        navigate("/");
+      }
+    });
+  }, [username]);
+
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
+  };
+
+  const handleAuth = () => {
+    if (!username) {
+      auth
+        .signInWithPopup(provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    } else {
+      auth
+        .signOut()
+        .then(() => {
+          dispatch(setSignOutState());
+          navigate("/");
+        })
+        .catch((error) => alert(error.message));
+    }
+  };
+
   return (
     <Container
       style={{
@@ -14,9 +68,10 @@ const MyPage = () => {
       <p>
         Start watching from where you left off, personalise for kids and more
       </p>
-      <button className="">Login</button>
-      {/* {!username ? (
-        <Login onClick={handleAuth}>LOGIN</Login>
+      {!username ? (
+        <button onClick={handleAuth} className="">
+          Login
+        </button>
       ) : (
         <SignOut>
           <UserImage src={userphoto} alt={username}></UserImage>
@@ -24,7 +79,7 @@ const MyPage = () => {
             <span onClick={handleAuth}>Sign Out</span>
           </DropDown>
         </SignOut>
-      )} */}
+      )}
     </Container>
   );
 };

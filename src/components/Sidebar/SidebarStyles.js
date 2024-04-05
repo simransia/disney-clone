@@ -137,41 +137,4 @@ const Logo = styled.a`
   }
 `;
 
-const Login = styled.a`
-  cursor: pointer;
-  color: #a0a3a9;
-  margin-top: 8px;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  padding-right: 14px;
-`;
-
-const UserImage = styled.img`
-  border-radius: 50%;
-  height: 50px;
-`;
-
-const DropDown = styled.div`
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background-color: rgb(19, 19, 19);
-  padding: 5px;
-  border: 1px solid rgba(151, 151, 151, 0.34);
-  opacity: 0;
-`;
-
-const SignOut = styled.div`
-  margin-right: 20px;
-  z-index: 2;
-  cursor: pointer;
-
-  &:hover {
-    ${DropDown} {
-      opacity: 1;
-      transition-duration: 1s;
-    }
-  }
-`;
-
-export { Nav, Logo, Login, SignOut, UserImage, DropDown };
+export { Nav, Logo };
