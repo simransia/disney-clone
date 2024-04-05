@@ -34,20 +34,20 @@ const Nav = styled.nav`
       position: relative;
 
       svg {
-        width: 20px;
+        width: 22px;
         min-width: 20px;
-        color: #a0a3a9;
+        color: #808387;
         transition: transform 0.3s ease;
       }
       span {
-        color: #a0a3a9;
+        color: #808387;
         line-height: 1.08;
         letter-spacing: 0.5px;
         font-weight: semi-bold;
         position: absolute;
         width: max-content;
         left: 45px;
-        font-size: 18px;
+        font-size: 20px;
         transform: translateX(-60%); /* Start from left */
         opacity: 0; /* Initially invisible */
         visibility: hidden;
@@ -61,6 +61,14 @@ const Nav = styled.nav`
           font-weight: bold;
           color: white;
         }
+      }
+    }
+
+    .active {
+      svg,
+      span {
+        font-weight: bold;
+        color: white;
       }
     }
 

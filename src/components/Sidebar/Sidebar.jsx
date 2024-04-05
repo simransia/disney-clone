@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   selectUserPhoto,
   selectUserName,
@@ -34,6 +34,10 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const username = useSelector(selectUserName);
   const userphoto = useSelector(selectUserPhoto);
+
+  const location = useLocation();
+
+  const { pathname } = location;
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
@@ -75,6 +79,8 @@ const Sidebar = () => {
     }
   };
 
+  console.log(pathname);
+
   return (
     <Nav>
       <div className="navMenu">
@@ -83,27 +89,48 @@ const Sidebar = () => {
             <img src="/images/logo.svg" alt="Disney" />
           </Logo>
         </div>
-        <a href={ROUTES.PROFILE}>
+        <a
+          href={ROUTES.PROFILE}
+          className={pathname === ROUTES.PROFILE ? "active" : ""}
+        >
           <CircleUser />
           <span>My Space</span>
         </a>
-        <a href={ROUTES.SEARCH}>
+        <a
+          href={ROUTES.SEARCH}
+          className={pathname === ROUTES.SEARCH ? "active" : ""}
+        >
           <Search /> <span>Search</span>
         </a>
-        <a href={ROUTES.HOME}>
+        <a
+          href={ROUTES.HOME}
+          className={pathname === ROUTES.HOME ? "active" : ""}
+        >
           <Home />
           <span>Home</span>
         </a>
-        <a href={ROUTES.SHOWS}>
+        <a
+          href={ROUTES.SHOWS}
+          className={pathname === ROUTES.SHOWS ? "active" : ""}
+        >
           <Tv /> <span>TV</span>
         </a>
-        <a href={ROUTES.MOVIES}>
+        <a
+          href={ROUTES.MOVIES}
+          className={pathname === ROUTES.MOVIES ? "active" : ""}
+        >
           <Clapperboard /> <span>Movies</span>
         </a>
-        <a href={ROUTES.SPORTS}>
+        <a
+          href={ROUTES.SPORTS}
+          className={pathname === ROUTES.SPORTS ? "active" : ""}
+        >
           <Eclipse /> <span>Sports</span>
         </a>
-        <a href={ROUTES.CATEGORIES}>
+        <a
+          href={ROUTES.CATEGORIES}
+          className={pathname === ROUTES.CATEGORIES ? "active" : ""}
+        >
           <LayoutTemplate /> <span>Categories</span>
         </a>
         {/* <a href="/kids">
