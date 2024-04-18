@@ -1,17 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
-import { useSelector } from "react-redux";
-import { selectDisneyJuniorSeries } from "../utils/movies/movieSlice";
-import { Carousel, Wrap } from "../styles/globalStyle";
+import { Carousel, Wrap } from "../../styles/globalStyle";
 
-function DisneyJunior(props) {
-  const movies = useSelector(selectDisneyJuniorSeries);
-
+const MovieList = ({ movies, title }) => {
   let settings = {
     infinite: false,
     slidesToShow: 8,
     slidesToScroll: 4,
+    initialSlide: 0,
 
     responsive: [
       {
@@ -32,8 +29,8 @@ function DisneyJunior(props) {
   };
 
   return (
-    <>
-      <h4>Disney Junior Series</h4>
+    <Fragment>
+      <h4>{title}</h4>
       <Carousel {...settings}>
         {movies &&
           movies.map((movie, key) => (
@@ -43,20 +40,23 @@ function DisneyJunior(props) {
                   <h2>{movie.title}</h2>
                   <h3>{movie.subTitle}</h3>
                   <p className="grey">
-                    <b>{movie.description.slice(0, 55)}</b>...
+                    <b>{movie.overview.slice(0, 55)}</b>...
                   </p>
                   <p className="grey">
                     {" "}
                     <AiOutlinePlus /> ADD TO WATCHLIST
                   </p>
                 </span>
-                <img src={movie.cardImg} />
+                <img
+                  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                  alt=""
+                />
               </Wrap>
             </Link>
           ))}
       </Carousel>
-    </>
+    </Fragment>
   );
-}
+};
 
-export default DisneyJunior;
+export default MovieList;

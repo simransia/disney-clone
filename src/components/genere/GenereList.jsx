@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
-import { useSelector } from "react-redux";
-import { selectMickeyAndFriends } from "../utils/movies/movieSlice";
-import { Carousel, Wrap } from "../styles/globalStyle";
+import { Carousel, ListContainer, Wrap } from "../../styles/globalStyle";
 
-function MickeyAndFriends(props) {
-  const movies = useSelector(selectMickeyAndFriends);
-
+const GenereList = ({ movies, title }) => {
   let settings = {
     infinite: false,
     slidesToShow: 8,
     slidesToScroll: 4,
 
     responsive: [
+      {
+        breakpoint: 1220,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 4,
+        },
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -32,8 +35,8 @@ function MickeyAndFriends(props) {
   };
 
   return (
-    <>
-      <h4>Mickey And Friends</h4>
+    <ListContainer>
+      <h4>{title}</h4>
       <Carousel {...settings}>
         {movies &&
           movies.map((movie, key) => (
@@ -50,13 +53,13 @@ function MickeyAndFriends(props) {
                     <AiOutlinePlus /> ADD TO WATCHLIST
                   </p>
                 </span>
-                <img src={movie.cardImg} />
+                <img src={movie.cardImg} alt="" />
               </Wrap>
             </Link>
           ))}
       </Carousel>
-    </>
+    </ListContainer>
   );
-}
+};
 
-export default MickeyAndFriends;
+export default GenereList;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import * as Movie from "../utils/movies/movieSlice";
+import * as Movie from "../utils/genere/genereSlice";
 import db from "../utils/firebase";
 
 const useDetailData = () => {

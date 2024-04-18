@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import db from "../utils/firebase";
-import { setMovies } from "../utils/movies/movieSlice";
+import { setGenere } from "../utils/genere/genereSlice";
 import { selectUserName } from "../utils/user/userSlice";
 
 const useAddDataToStore = () => {
@@ -48,7 +48,7 @@ const useAddDataToStore = () => {
         return acc;
       }, initialCategories); // Use initialCategories as the starting point for accumulation.
 
-      dispatch(setMovies(newCategories));
+      dispatch(setGenere(newCategories));
     });
 
     return () => unsubscribe();
