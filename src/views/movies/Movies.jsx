@@ -7,7 +7,7 @@ import {
   selectupcoming,
   setMovies,
 } from "../../utils/movies/moviesSlice";
-import { MediaList } from "../../components";
+import { ImageSlider, MediaList } from "../../components";
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -79,6 +79,7 @@ const Movies = () => {
 
   return (
     <div>
+      <ImageSlider />
       <MediaList movies={nowPlayingMovies} title="Now Playing" />
       <MediaList movies={topRatedMovies} title="Top Rated" />
       <MediaList movies={popularMovies} title="Popular" />

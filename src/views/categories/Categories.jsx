@@ -1,7 +1,12 @@
 import React from "react";
+import { Viewers } from "../../components";
 
 const Categories = () => {
-  return <div>Categories</div>;
+  return (
+    <div>
+      <Viewers />
+    </div>
+  );
 };
 
 export default Categories;

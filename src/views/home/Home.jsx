@@ -12,7 +12,7 @@ import {
   selectWomen,
   selectRecommend,
 } from "../../utils/genere/genereSlice";
-import BackgroundVideo from "../../components/movieVideo/BackgroundVideo";
+import BackgroundVideo from "../../components/movieTrailer/BackgroundVideo";
 
 const Home = () => {
   useAddDataToStore();
@@ -28,9 +28,8 @@ const Home = () => {
 
   return (
     <Fragment>
+      {/* <BackgroundVideo movieId={872585} /> */}
       <ImageSlider />
-      <BackgroundVideo movieId={872585} />
-      <Viewers />
       <GenereList movies={recommendedMovies} title="Recommended For You" />
       <GenereList movies={newToDisneyMovies} title="New To Disney+" />
       <GenereList movies={womenMovies} title="Women Lead The Way" />
