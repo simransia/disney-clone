@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
-import { Carousel, Wrap } from "../../styles/globalStyle";
+import { Carousel, ListContainer, Wrap } from "../../styles/globalStyle";
 
 const MovieList = ({ movies, title }) => {
   let settings = {
@@ -29,7 +29,7 @@ const MovieList = ({ movies, title }) => {
   };
 
   return (
-    <Fragment>
+    <ListContainer>
       <h4>{title}</h4>
       <Carousel {...settings}>
         {movies &&
@@ -55,7 +55,7 @@ const MovieList = ({ movies, title }) => {
             </Link>
           ))}
       </Carousel>
-    </Fragment>
+    </ListContainer>
   );
 };
 

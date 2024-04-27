@@ -1,6 +1,15 @@
 import Slider from "react-slick";
 import styled from "styled-components";
 
+export const DetailsContainer = styled.div`
+  padding-right: 50px;
+  margin-top: 10px;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+`;
+
 export const Carousel = styled(Slider)`
   padding-top: 5px;
 
@@ -51,6 +60,7 @@ export const Carousel = styled(Slider)`
 export const Wrap = styled.div`
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 30px;
 
   a {
     border-radius: 6px;
@@ -74,6 +84,14 @@ export const Wrap = styled.div`
       line-height: 1.7;
       z-index: 3;
       width: max-content;
+
+      p:first-child {
+        margin-bottom: 10px;
+      }
+
+      p:last-child {
+        margin-top: 4px;
+      }
 
       @media (max-width: 1280px) {
         margin-right: -165px;
@@ -109,6 +127,7 @@ export const Wrap = styled.div`
   img {
     display: block;
     margin-left: auto;
+    margin-right: 20px;
     max-width: 100%;
     width: 50rem;
     height: 31rem;
@@ -140,7 +159,7 @@ export const Wrap = styled.div`
     bottom: 0;
     left: -10px;
     overflow: hidden;
-    box-shadow: inset 620px 0 100px 0 #030b17;
+    box-shadow: inset 645px 0 100px 0 #030b17;
     z-index: 2;
 
     @media (max-width: 1350px) {
@@ -185,8 +204,8 @@ export const Background = styled.div`
   }
 `;
 export const Container = styled.div`
-  width: 95vw;
-  margin-left: -2.4vw;
+  width: 94vw;
+  margin-left: -2.5vw;
 
   .subscribe {
     font-size: 12px;

@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const ListContainer = styled.div`
-  margin-bottom: 10px;
+  margin: 12px 0;
 
   h4 {
     margin-bottom: 5px;
