@@ -5,10 +5,6 @@ export const FootNote = styled.div`
   font-size: 0.65rem;
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 100px;
-  right: 10px;
 
   .first {
     width: 60%;
@@ -127,6 +123,11 @@ export const FootNote = styled.div`
       border-radius: 5px;
       margin-left: 5px;
 
+      p:first-child {
+        position: relative;
+        bottom: 7px;
+      }
+
       p {
         margin-bottom: -6px;
       }
@@ -150,7 +151,7 @@ export const FootNote = styled.div`
   }
 
   @media (max-width: 780px) {
-    display: block;
-    float: left;
+    display: flex;
+    direction: column;
   }
 `;

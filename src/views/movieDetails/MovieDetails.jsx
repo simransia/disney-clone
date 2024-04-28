@@ -69,7 +69,7 @@ function MovieDetails(props) {
                 </div>
               </div>
             </div>
-            <img src={detailData.backgroundImg} />
+            <img src={detailData.backgroundImg} alt="" />
           </a>
         </Wrap>
       </Container>
