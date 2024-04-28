@@ -79,7 +79,7 @@ function MovieDetails(props) {
       <Carousel {...settings}>
         {movies &&
           movies.map((movie, key) =>
-            movie.id != id ? (
+            movie.id !== id ? (
               <Link to={"/detail/" + movie.id} key={key}>
                 <Cell>
                   <span>
