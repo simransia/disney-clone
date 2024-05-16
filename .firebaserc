@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "disney-plus-clone-97386"
-  }
+    "default": "disney-plus-clone-b8ac4",
+    "development": "disney-plus-clone-b8ac4"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
