@@ -30,13 +30,13 @@ const MovieList = ({ movies, title }) => {
 
   return (
     <ListContainer>
-      <h4>{title}</h4>
+      <p className="title">{title}</p>
       <Carousel {...settings}>
         {movies &&
           movies.map((movie, key) => (
             <Link to={"/detail/" + movie.id} key={key}>
               <Wrap>
-                <span>
+                <div>
                   <h2>{movie.title}</h2>
                   <h3>{movie.subTitle}</h3>
                   <p className="grey">
@@ -46,7 +46,7 @@ const MovieList = ({ movies, title }) => {
                     {" "}
                     <AiOutlinePlus /> ADD TO WATCHLIST
                   </p>
-                </span>
+                </div>
                 <img
                   src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
                   alt=""

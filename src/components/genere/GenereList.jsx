@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Carousel, ListContainer, Wrap } from "../../styles/globalStyle";
 
 const GenereList = ({ movies, title }) => {
+  const [movieList, setMovieList] = useState([]);
+
   let settings = {
     infinite: false,
     slidesToShow: 8,
@@ -34,25 +36,41 @@ const GenereList = ({ movies, title }) => {
     ],
   };
 
+  const normalizeKeys = (movie) => {
+    const normalizedMovie = {};
+    for (let key in movie) {
+      const normalizedKey = key.trim();
+      normalizedMovie[normalizedKey] = movie[key];
+    }
+    return normalizedMovie;
+  };
+
+  useEffect(() => {
+    if (movies) {
+      const normalizedData = movies.map(normalizeKeys);
+      setMovieList(normalizedData);
+    }
+  }, [movies]);
+
   return (
     <ListContainer>
-      <h4>{title}</h4>
+      <p className="title">{title}</p>
       <Carousel {...settings}>
-        {movies &&
-          movies.map((movie, key) => (
+        {movieList &&
+          movieList.map((movie, key) => (
             <Link to={"/detail/" + movie.id} key={key}>
               <Wrap>
-                <span>
+                <div>
                   <h2>{movie.title}</h2>
                   <h3>{movie.subTitle}</h3>
                   <p className="grey">
-                    <b>{movie.description.slice(0, 55)}</b>...
+                    <b>{movie.description?.slice(0, 55)}</b>...
                   </p>
                   <p className="grey">
                     {" "}
                     <AiOutlinePlus /> ADD TO WATCHLIST
                   </p>
-                </span>
+                </div>
                 <img src={movie.cardImg} alt="" />
               </Wrap>
             </Link>

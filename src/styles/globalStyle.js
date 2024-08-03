@@ -4,10 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const ListContainer = styled.div`
-  margin: 12px 0;
+  margin: 20px 0;
+  font-family: "Inter", sans-serif;
 
-  h4 {
-    margin-bottom: 5px;
+  .title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
   }
 `;
 
@@ -59,7 +62,7 @@ export const Wrap = styled.div`
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   z-index: 2;
 
-  span {
+  div {
     font-size: 0.45rem;
     width: 94%;
     grid-row: 1/-1;
@@ -67,8 +70,14 @@ export const Wrap = styled.div`
     z-index: -1;
     display: none;
 
+    h2,
+    h3 {
+      margin-bottom: 5px;
+    }
+
     .grey {
       color: #c3c5c7;
+      margin-bottom: 6px;
     }
   }
 
@@ -96,10 +105,10 @@ export const Wrap = styled.div`
       z-index: 2;
     }
 
-    span {
+    div {
       display: block;
       position: absolute;
-      bottom: -5px;
+      bottom: -3px;
       z-index: 3;
       padding: 8px;
     }

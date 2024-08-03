@@ -1,43 +1,76 @@
 import React from "react";
 import useAddTrailerVideoData from "../../hooks/useAddTrailerVideoData";
 import { Container } from "./bgVideoStyles";
+import { FaPlay } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { MOVIE_PREVIEW_DETAILS } from "../../constants/movieIds";
 
 const BackgroundVideo = ({ movieId }) => {
-  const { trailerVideo } = useAddTrailerVideoData(movieId);
+  const { trailerVideo, trailerVideoDetails } = useAddTrailerVideoData(movieId);
 
-  console.log(trailerVideo, "heree");
+  const video = trailerVideo?.filter((item) => item.movieId === movieId)[0];
+
+  const details = trailerVideoDetails?.filter(
+    (item) => item.movieId === movieId
+  )[0];
+
+  console.log(video, details, "detail", trailerVideo, trailerVideoDetails);
+
+  if (!video || !details) {
+    // Render a loading state or placeholder
+    const image = MOVIE_PREVIEW_DETAILS.filter((item) => item.id === movieId)[0]
+      .img;
+    console.log(image);
+    return (
+      <Container className="">
+        <img src={image} alt="" className="loading-image" />
+      </Container>
+    );
+  }
 
   return (
     <Container className="">
       <iframe
-        className=""
+        className="iframe"
         src={
           "https://www.youtube.com/embed/" +
-          trailerVideo?.key +
+          video?.key +
           "?&autoplay=1&mute=1&loop=1&playlist=" +
-          trailerVideo?.key
+          video?.key
         }
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
-      <div className="overlay"></div>
+      <div className="overlay">
+        <div className="video-details">
+          {" "}
+          <p className="title">{details?.title}</p>{" "}
+          <p className="description">
+            {details?.description.length > 190
+              ? details?.description.slice(0, 120) + "..."
+              : details?.description}
+          </p>
+          <p className="genres">
+            {details?.genres?.map((item, ind) => (
+              <span>
+                {item.name} {ind + 1 !== details.genres.length ? "| " : ""}
+              </span>
+            ))}
+          </p>
+          <div className="btn-container">
+            <button>
+              <FaPlay />
+              Watch Now
+            </button>
+            <button>
+              {" "}
+              <FaPlus />
+            </button>
+          </div>
+        </div>
+      </div>
     </Container>
   );
 };
 export default BackgroundVideo;
-
-// return (
-//   <div className="w-screen">
-//     <iframe
-//       className="w-screen aspect-video"
-//       src={
-//         "https://www.youtube.com/embed/" +
-//         trailerVideo?.key +
-//         "?&autoplay=1&mute=1"
-//       }
-//       title="YouTube video player"
-//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-//     ></iframe>
-//   </div>
-// );

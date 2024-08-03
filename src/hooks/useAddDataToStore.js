@@ -16,13 +16,23 @@ const useAddDataToStore = () => {
       women: "women",
       hit: "hitMovie",
       disney: "disneyOriginal",
-      animal: "animalsAndNature",
+      Animal: "animalsAndNature",
       mickey: "mickeyAndFriend",
       junior: "disneyJuniorSeries",
     };
     return typeMap[type] || null;
   };
+
   useEffect(() => {
+    const normalizeKeys = (data) => {
+      const normalizedData = {};
+      for (const key in data) {
+        const normalizedKey = key.replace(/\s+/g, ""); // Example normalization: remove spaces and convert to lower case
+        normalizedData[normalizedKey] = data[key];
+      }
+      return normalizedData;
+    };
+
     const unsubscribe = db.collection("movies").onSnapshot((snapshot) => {
       const initialCategories = {
         recommend: [],
@@ -36,10 +46,14 @@ const useAddDataToStore = () => {
       };
 
       const newCategories = snapshot.docs.reduce((acc, doc) => {
-        const newEntry = { id: doc.id, ...doc.data() };
+        const docData = doc.data();
+        const normalizedDocData = normalizeKeys(docData);
+        const newEntry = { id: doc.id, ...normalizedDocData };
 
-        const type = doc.data().type;
-        const categoryKey = typeToCategoryKey(type); // Maps 'type' to your state keys
+        const type = normalizedDocData.type?.trim();
+        const categoryKey = typeToCategoryKey(type);
+
+        console.log(type, normalizedDocData); // Maps 'type' to your state keys
 
         if (categoryKey) {
           acc[categoryKey] = [...acc[categoryKey], newEntry];
@@ -52,7 +66,7 @@ const useAddDataToStore = () => {
     });
 
     return () => unsubscribe();
-  }, [dispatch, userName]);
+  }, [userName]);
 };
 
 export default useAddDataToStore;

@@ -1,7 +1,78 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectPopular,
+  selectFeaturingNow,
+  selectTopRated,
+  selectInTheSpotLight,
+  setMovies,
+} from "../../utils/tvShows/tvShowSlice";
+import { ImageSlider, MediaList } from "../../components";
 
 const Shows = () => {
-  return <div>Shows</div>;
+  const dispatch = useDispatch();
+  const featuringNowShows = useSelector(selectFeaturingNow);
+  const popularShows = useSelector(selectPopular);
+  const topRatedShows = useSelector(selectTopRated);
+  const inTheSpotLightShows = useSelector(selectInTheSpotLight);
+  const [moviesData, setMoviesData] = useState([]);
+
+  const API_BASE_URL = "https://api.themoviedb.org/3/tv/";
+
+  const API_OPTIONS = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMGMxMjEzN2YyMTIxNGEwNTljZTAzMTI2YjQ3MTdhMSIsInN1YiI6IjY2MTkyYTU3ZjlhYTQ3MDE3ZDM0OGM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tyTcd6s8kLs1qWMgJw6rBg7Hr_B8GHfYSvMQOv7T5ec",
+    },
+  };
+
+  const fetchMoviesData = async (url, setMoviesData, key) => {
+    try {
+      const response = await fetch(url, API_OPTIONS);
+      const data = await response.json();
+      setMoviesData((prev) => ({ ...prev, [key]: data.results }));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchMoviesData(
+      `${API_BASE_URL}/airing_today?language=en-US&page=1`,
+      setMoviesData,
+      "featuringNow"
+    );
+    fetchMoviesData(
+      `${API_BASE_URL}/popular?language=en-US&page=1`,
+      setMoviesData,
+      "popular"
+    );
+    fetchMoviesData(
+      `${API_BASE_URL}/top_rated?language=en-US&page=1`,
+      setMoviesData,
+      "topRated"
+    );
+    fetchMoviesData(
+      `${API_BASE_URL}/on_the_airyy?language=en-US&page=1`,
+      setMoviesData,
+      "inTheSpotlight"
+    );
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(setMovies(moviesData));
+  }, [moviesData, dispatch]);
+
+  return (
+    <div>
+      <MediaList movies={featuringNowShows} title="Featuring Now" />
+      <MediaList movies={inTheSpotLightShows} title="In The SpotLight" />
+      <MediaList movies={topRatedShows} title="Top Rated" />
+      <MediaList movies={popularShows} title="Popular" />
+    </div>
+  );
 };
 
 export default Shows;

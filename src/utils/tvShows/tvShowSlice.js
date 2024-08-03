@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  nowPlaying: null,
+  featuringNow: null,
+  inTheSpotlight: null,
   topRated: null,
   popular: null,
-  upcoming: null,
 };
 
 const tvShowSlice = createSlice({
@@ -12,11 +12,12 @@ const tvShowSlice = createSlice({
   initialState,
   reducers: {
     setMovies: (state, action) => {
-      const { nowPlaying, topRated, popular, upcoming } = action.payload;
-      state.nowPlaying = nowPlaying;
+      const { inTheSpotlight, topRated, popular, featuringNow } =
+        action.payload;
+      state.inTheSpotlight = inTheSpotlight;
       state.topRated = topRated;
       state.popular = popular;
-      state.upcoming = upcoming;
+      state.featuringNow = featuringNow;
     },
   },
 });
@@ -25,5 +26,7 @@ export const { setMovies } = tvShowSlice.actions;
 
 export const selectTopRated = (state) => state.tvShow.topRated;
 export const selectPopular = (state) => state.tvShow.popular;
+export const selectFeaturingNow = (state) => state.tvShow.featuringNow;
+export const selectInTheSpotLight = (state) => state.tvShow.inTheSpotlight;
 
 export default tvShowSlice.reducer;

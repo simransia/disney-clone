@@ -6,7 +6,8 @@ const Nav = styled.nav`
   left: 0;
   height: 100vh;
   width: 80px;
-  background-color: #121926;
+  /* background-color: #121926; */
+  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   align-items: center;

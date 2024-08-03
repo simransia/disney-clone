@@ -1,13 +1,13 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID,
-  measurementId: process.env.MEASUREMENT_ID,
+  apiKey: "AIzaSyDjTJIi5a16wVX3p_piUO006CK_hdj53IE",
+  authDomain: "disney-plus-clone-b8ac4.firebaseapp.com",
+  projectId: "disney-plus-clone-b8ac4",
+  storageBucket: "disney-plus-clone-b8ac4.appspot.com",
+  messagingSenderId: "559104332845",
+  appId: "1:559104332845:web:3d2e7597d9ce8076c7d4a4",
+  measurementId: "G-K2ENQPS66V",
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

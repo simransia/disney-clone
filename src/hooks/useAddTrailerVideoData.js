@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTrailer, setTrailer } from "../utils/video/VideoSlice";
+import {
+  selectTrailer,
+  selectTrailerDetails,
+  setTrailer,
+  setTrailerDetails,
+} from "../utils/video/VideoSlice";
 
 const useAddTrailerVideoData = (movieId) => {
   const dispatch = useDispatch();
@@ -15,6 +20,7 @@ const useAddTrailerVideoData = (movieId) => {
   };
 
   const trailerVideo = useSelector(selectTrailer);
+  const trailerVideoDetails = useSelector(selectTrailerDetails);
 
   const getMovieVideos = async () => {
     const data = await fetch(
@@ -29,14 +35,37 @@ const useAddTrailerVideoData = (movieId) => {
 
     const trailer = filterData.length ? filterData[0] : json.results[0];
     console.log(trailer, "2");
-    dispatch(setTrailer({ trailerVideo: trailer }));
+    dispatch(setTrailer({ trailerVideo: { ...trailer, movieId } }));
+  };
+
+  const getVideoData = async () => {
+    const data = await fetch(
+      "https://api.themoviedb.org/3/movie/" + movieId + "?language=en-US",
+      options
+    );
+    const details = await data.json();
+    dispatch(
+      setTrailerDetails({
+        trailerVideoDetails: {
+          title: details.title,
+          description: details.overview,
+          tagLine: details.tagline,
+          genres: details.genres,
+          movieId,
+        },
+      })
+    );
   };
 
   useEffect(() => {
-    !trailerVideo && getMovieVideos();
-  }, []);
+    trailerVideo.filter((item) => item.movieId === movieId).length < 1 &&
+      getMovieVideos();
 
-  return { trailerVideo };
+    trailerVideoDetails.filter((item) => item.movieId === movieId).length < 1 &&
+      getVideoData();
+  }, [movieId]);
+
+  return { trailerVideo, trailerVideoDetails };
 };
 
 export default useAddTrailerVideoData;

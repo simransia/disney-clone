@@ -16,7 +16,10 @@ const Movies = () => {
   const topRatedMovies = useSelector(selectTopRated);
   const upcomingMovies = useSelector(selectupcoming);
   const [moviesData, setMoviesData] = useState([]);
-  const options = {
+
+  const API_BASE_URL = "https://api.themoviedb.org/3/movie";
+
+  const API_OPTIONS = {
     method: "GET",
     headers: {
       accept: "application/json",
@@ -25,57 +28,42 @@ const Movies = () => {
     },
   };
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) =>
-        setMoviesData((prev) => ({ ...prev, nowPlaying: response.results }))
-      )
-      .catch((err) => console.error(err));
-  }, [dispatch]);
+  const fetchMoviesData = async (url, setMoviesData, key) => {
+    try {
+      const response = await fetch(url, API_OPTIONS);
+      const data = await response.json();
+      setMoviesData((prev) => ({ ...prev, [key]: data.results }));
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) =>
-        setMoviesData((prev) => ({ ...prev, popular: response.results }))
-      )
-      .catch((err) => console.error(err));
-  }, [dispatch]);
-
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) =>
-        setMoviesData((prev) => ({ ...prev, topRated: response.results }))
-      )
-      .catch((err) => console.error(err));
-  }, [dispatch]);
-
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) =>
-        setMoviesData((prev) => ({ ...prev, upcoming: response.results }))
-      )
-      .catch((err) => console.error(err));
+    fetchMoviesData(
+      `${API_BASE_URL}/now_playing?language=en-US&page=1`,
+      setMoviesData,
+      "nowPlaying"
+    );
+    fetchMoviesData(
+      `${API_BASE_URL}/popular?language=en-US&page=1`,
+      setMoviesData,
+      "popular"
+    );
+    fetchMoviesData(
+      `${API_BASE_URL}/top_rated?language=en-US&page=1`,
+      setMoviesData,
+      "topRated"
+    );
+    fetchMoviesData(
+      `${API_BASE_URL}/upcoming?language=en-US&page=1`,
+      setMoviesData,
+      "upcoming"
+    );
   }, [dispatch]);
 
   useEffect(() => {
     dispatch(setMovies(moviesData));
-  }, [moviesData]);
+  }, [moviesData, dispatch]);
 
   return (
     <div>
