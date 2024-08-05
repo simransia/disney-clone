@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Carousel, ListContainer, Wrap } from "../../styles/globalStyle";
+import { normalizeKeys } from "../../utils/getNormalizedKeys";
 
 const GenereList = ({ movies, title }) => {
   const [movieList, setMovieList] = useState([]);
@@ -36,21 +37,14 @@ const GenereList = ({ movies, title }) => {
     ],
   };
 
-  const normalizeKeys = (movie) => {
-    const normalizedMovie = {};
-    for (let key in movie) {
-      const normalizedKey = key.trim();
-      normalizedMovie[normalizedKey] = movie[key];
-    }
-    return normalizedMovie;
-  };
-
   useEffect(() => {
     if (movies) {
       const normalizedData = movies.map(normalizeKeys);
       setMovieList(normalizedData);
     }
   }, [movies]);
+
+  console.log(movies);
 
   return (
     <ListContainer>

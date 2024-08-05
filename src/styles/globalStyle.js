@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const ListContainer = styled.div`
-  margin: 20px 0;
+  margin: 26px 0;
   font-family: "Inter", sans-serif;
 
   .title {
@@ -26,7 +26,7 @@ export const Carousel = styled(Slider)`
   .slick-prev:before {
     content: "\f104";
     position: relative;
-    left: -14px;
+    left: 8px;
   }
   .slick-next:before {
     content: "\f105";
@@ -117,4 +117,8 @@ export const Wrap = styled.div`
       width: 100%;
     }
   }
+`;
+
+export const MediaListContainer = styled.div`
+  padding: 0 14px;
 `;

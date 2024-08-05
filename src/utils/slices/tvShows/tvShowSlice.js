@@ -11,7 +11,7 @@ const tvShowSlice = createSlice({
   name: "tvShow",
   initialState,
   reducers: {
-    setMovies: (state, action) => {
+    setShows: (state, action) => {
       const { inTheSpotlight, topRated, popular, featuringNow } =
         action.payload;
       state.inTheSpotlight = inTheSpotlight;
@@ -22,7 +22,7 @@ const tvShowSlice = createSlice({
   },
 });
 
-export const { setMovies } = tvShowSlice.actions;
+export const { setShows } = tvShowSlice.actions;
 
 export const selectTopRated = (state) => state.tvShow.topRated;
 export const selectPopular = (state) => state.tvShow.popular;

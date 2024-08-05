@@ -12,6 +12,7 @@ export const DetailsContainer = styled.div`
 
 export const Carousel = styled(Slider)`
   padding-top: 5px;
+  /* padding: 0 14px; */
 
   .slick-prev:before,
   .slick-next:before {
@@ -23,7 +24,7 @@ export const Carousel = styled(Slider)`
   .slick-prev:before {
     content: "\f104";
     position: relative;
-    left: -8px;
+    left: 4px;
   }
   .slick-next:before {
     content: "\f105";
@@ -60,7 +61,7 @@ export const Carousel = styled(Slider)`
 export const Wrap = styled.div`
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 10px;
 
   a {
     border-radius: 6px;
@@ -68,7 +69,7 @@ export const Wrap = styled.div`
       rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     cursor: pointer;
     position: relative;
-    padding: 0 15px;
+    /* padding: 0 15px; */
     display: flex;
     justify-content: space-evenly;
 
@@ -98,8 +99,8 @@ export const Wrap = styled.div`
       }
 
       @media (max-width: 1150px) {
-        margin-top: 35px;
-        margin-left: 20px;
+        margin-top: 45px;
+        margin-left: 25px;
         margin-right: -200px;
       }
 
@@ -123,6 +124,10 @@ export const Wrap = styled.div`
       font-weight: bold;
       color: #9a9da2;
     }
+
+    @media (max-width: 640px) {
+      padding: 0;
+    }
   }
   img {
     display: block;
@@ -144,9 +149,8 @@ export const Wrap = styled.div`
     }
 
     @media (max-width: 550px) {
-      min-width: 98vw;
-      padding: 0 17px;
-      height: 15rem;
+      height: 28vh;
+      min-width: 100%;
     }
   }
 
@@ -187,6 +191,10 @@ export const Wrap = styled.div`
       display: none;
     }
   }
+
+  @media (max-width: 640px) {
+    margin-left: 0;
+  }
 `;
 
 export const Background = styled.div`
@@ -213,6 +221,7 @@ export const Container = styled.div`
     font-weight: 800;
     position: relative;
     top: 2vh;
+    margin-top: 30px;
   }
 
   a {
@@ -282,22 +291,22 @@ export const Container = styled.div`
         p {
           font-size: 12px;
         }
-        @media (max-width: 780px) {
+        /* @media (max-width: 780px) {
           display: none;
-        }
+        } */
       }
 
       @media (max-width: 880px) {
         width: 95%;
       }
     }
-    @media (max-width: 780px) {
+    /* @media (max-width: 780px) {
       position: absolute;
       bottom: 3px;
-      left: -11px;
+      left: 8px;
       font-size: 20px;
       background-color: rgba(0, 0, 0, 0.2);
       width: 100vw;
-    }
+    } */
   }
 `;

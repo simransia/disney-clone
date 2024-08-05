@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Carousel, Wrap } from "../../views/movieDetails/movieDetailsStyles";
 import { SliderContainer } from "./SliderStyles";
+import { Link } from "react-router-dom";
 
 function ImageSlider(props) {
   let settings = {
@@ -12,28 +13,14 @@ function ImageSlider(props) {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: false,
-    // autoplay: true,
+    autoplay: true,
   };
 
   return (
     <SliderContainer>
       <Carousel {...settings}>
         <Wrap>
-          <a>
-            <span>
-              <h2>The Ice Age Adventures of Buck Wild</h2>
-              <p className="sub-head">English. Family - 2022</p>
-              <p>
-                The hilarious escapades of everyone's favourite prehistoric
-                mammals Crash and Eddie continue, as they join pal Buck Wild to
-                take on dinosaurs of the Lost World.
-              </p>
-            </span>
-            <img src="/images/slider-img-1.jfif" alt="" />
-          </a>
-        </Wrap>
-        <Wrap>
-          <a>
+          <Link to="#">
             <span>
               <h2>Shang-Chi and The Legend of The Ten Rings</h2>
               <p className="sub-head">Superhero - 2021</p>
@@ -44,10 +31,10 @@ function ImageSlider(props) {
               </p>
             </span>
             <img src="/images/slider-img-2.jfif" alt="" />
-          </a>
+          </Link>
         </Wrap>
         <Wrap>
-          <a>
+          <Link to="#">
             <span>
               <h2>Encanto</h2>
               <p className="sub-head">Fantasy - 2021</p>
@@ -58,10 +45,24 @@ function ImageSlider(props) {
               </p>
             </span>
             <img src="/images/slider-img-3.jfif" alt="" />
-          </a>
+          </Link>
         </Wrap>
         <Wrap>
-          <a>
+          <Link to="#">
+            <span>
+              <h2>The Ice Age Adventures of Buck Wild</h2>
+              <p className="sub-head">English. Family - 2022</p>
+              <p>
+                The hilarious escapades of everyone's favourite prehistoric
+                mammals Crash and Eddie continue, as they join pal Buck Wild to
+                take on dinosaurs of the Lost World.
+              </p>
+            </span>
+            <img src="/images/slider-img-1.jfif" alt="" />
+          </Link>
+        </Wrap>
+        <Wrap>
+          <Link to="#">
             <span>
               <h2>The Book of Boba Fett</h2>
               <p className="sub-head">Star Wars Action</p>
@@ -71,10 +72,10 @@ function ImageSlider(props) {
               </p>
             </span>
             <img src="/images/slider-img-4.png" alt="" />
-          </a>
+          </Link>
         </Wrap>
         <Wrap>
-          <a>
+          <Link to="#">
             <span>
               <h2>Hawkeye</h2>
               <p className="sub-head">Marvel Superhero</p>
@@ -84,10 +85,10 @@ function ImageSlider(props) {
               </p>
             </span>
             <img src="/images/slider-img-6.jfif" alt="" />
-          </a>
+          </Link>
         </Wrap>
         <Wrap>
-          <a>
+          <Link to="#">
             <span>
               <h2>Snowdrop</h2>
               <p className="sub-head">
@@ -101,7 +102,7 @@ function ImageSlider(props) {
               </p>
             </span>
             <img src="/images/slider-img-5.jfif" alt="" />
-          </a>
+          </Link>
         </Wrap>
       </Carousel>
     </SliderContainer>

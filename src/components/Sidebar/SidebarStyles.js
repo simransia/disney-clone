@@ -119,6 +119,10 @@ const Nav = styled.nav`
     }
   }
 
+  @media (max-width: 768px) {
+    width: 60px;
+  }
+
   @media (max-width: 640px) {
     opacity: 0;
     display: hidden;
@@ -131,6 +135,7 @@ const Logo = styled.a`
   font-size: 0;
   display: inline-block;
   margin-top: 28px;
+
   img {
     display: block;
     width: 85%;

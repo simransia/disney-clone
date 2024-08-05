@@ -51,6 +51,9 @@ const BackgroundVideo = ({ movieId }) => {
               ? details?.description.slice(0, 120) + "..."
               : details?.description}
           </p>
+          <p className="description-mobile">
+            {details?.description.slice(0, 50) + "..."}
+          </p>
           <p className="genres">
             {details?.genres?.map((item, ind) => (
               <span>

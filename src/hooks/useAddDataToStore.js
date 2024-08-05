@@ -2,8 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import db from "../utils/firebase";
-import { setGenere } from "../utils/genere/genereSlice";
-import { selectUserName } from "../utils/user/userSlice";
+import { setGenere } from "../utils/slices/genere/genereSlice";
+import { selectUserName } from "../utils/slices/user/userSlice";
 
 const useAddDataToStore = () => {
   const dispatch = useDispatch();

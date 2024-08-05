@@ -4,8 +4,8 @@ export const ROUTES = {
   PROFILE: "/my-space",
   SHOWS: "/shows",
   MOVIES: "/movies",
-  SPORTS: "./sports",
-  CATEGORIES: "./categories",
+  SPORTS: "/sports",
+  CATEGORIES: "/categories",
   MOVIE_DETAILS: "/detail/:id",
   SUBSCRIBE: "/detail/:id/watch",
 };

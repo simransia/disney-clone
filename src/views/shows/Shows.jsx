@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectPopular,
   selectFeaturingNow,
   selectTopRated,
   selectInTheSpotLight,
-  setMovies,
-} from "../../utils/tvShows/tvShowSlice";
-import { ImageSlider, MediaList } from "../../components";
+  setShows,
+} from "../../utils/slices/tvShows/tvShowSlice";
+import { MediaList } from "../../components";
+import TvShowSlider from "../../components/tvShowsSlider/tvShowSlider";
+import { MediaListContainer } from "../../styles/globalStyle";
 
 const Shows = () => {
   const dispatch = useDispatch();
@@ -55,23 +57,26 @@ const Shows = () => {
       "topRated"
     );
     fetchMoviesData(
-      `${API_BASE_URL}/on_the_airyy?language=en-US&page=1`,
+      `${API_BASE_URL}/on_the_air?language=en-US&page=1`,
       setMoviesData,
       "inTheSpotlight"
     );
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(setMovies(moviesData));
+    dispatch(setShows(moviesData));
   }, [moviesData, dispatch]);
 
   return (
-    <div>
-      <MediaList movies={featuringNowShows} title="Featuring Now" />
-      <MediaList movies={inTheSpotLightShows} title="In The SpotLight" />
-      <MediaList movies={topRatedShows} title="Top Rated" />
-      <MediaList movies={popularShows} title="Popular" />
-    </div>
+    <Fragment>
+      <TvShowSlider />
+      <MediaListContainer>
+        <MediaList movies={featuringNowShows} title="Featuring Now" />
+        <MediaList movies={inTheSpotLightShows} title="In The SpotLight" />
+        <MediaList movies={topRatedShows} title="Top Rated" />
+        <MediaList movies={popularShows} title="Popular" />
+      </MediaListContainer>
+    </Fragment>
   );
 };
 

@@ -11,7 +11,7 @@ import {
   selectNewDisney,
   selectWomen,
   selectRecommend,
-} from "../../utils/genere/genereSlice";
+} from "../../utils/slices/genere/genereSlice";
 import BackgroundVideo from "../../components/movieTrailer/BackgroundVideo";
 import { Carousel } from "../../styles/globalStyle";
 import { MOVIE_PREVIEW_DETAILS } from "../../constants/movieIds";

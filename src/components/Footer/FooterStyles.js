@@ -2,107 +2,81 @@ import styled from "styled-components";
 
 export const FootNote = styled.div`
   margin-top: 35px;
+  margin-bottom: 20px;
   font-size: 0.65rem;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-style: "Inter", sans-serif;
 
-  .first {
-    width: 60%;
-    margin-top: 10px;
+  .column {
+    width: 25%;
 
-    a {
-      margin-right: 5px;
-      margin-left: 4px;
-      margin-bottom: 5px;
-      float: left;
-
-      @media (max-width: 780px) {
-        margin-right: 10px;
-        font-size: 0.59rem;
-      }
+    p:first-child {
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 25px;
     }
 
     .links {
-      width: 80%;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    a,
+    .copyright-text {
+      color: #8f98b2;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      gap: 4px;
+    }
+    /* .copyright-text{
+      font-size: 16px;
+    } */
+    .additional-links,
+    .copyright-text {
+      font-size: 14px;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
     }
 
-    p {
-      clear: both;
-      font-size: 0.56rem;
-      width: 80%;
-      margin-left: 10px;
-
-      @media (max-width: 780px) {
-        font-size: 0.6rem;
+    @media (max-width: 1024px) {
+      .additional-links,
+      .copyright-text {
+        font-size: 12px;
       }
     }
 
-    @media (max-width: 780px) {
-      width: 95vw;
+    @media (max-width: 785px) {
+      width: 48%;
+    }
+
+    @media (max-width: 650px) {
+      width: 100%;
     }
   }
 
-  .second {
-    width: 20%;
-
-    p {
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 0.6rem;
-    }
+  .fourth {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     .inner-first {
+      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: center;
-
-      @media (max-width: 780px) {
-        flex-direction: column;
-      }
-    }
-    button {
-      display: flex;
       align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      background-color: #192133;
-      border: none;
-      border-radius: 5px;
-      margin-left: 8px;
-      margin-bottom: 8px;
-
-      @media (max-width: 780px) {
-        height: 1.7rem;
-        width: 1.5rem;
-        font-size: 0.2rem;
-      }
+      gap: 30px;
     }
-    @media (max-width: 780px) {
-      width: 22%;
-      margin-left: 25px;
-      float: left;
-    }
-  }
 
-  .third {
-    width: 20%;
-
-    .hotstar {
-      text-align: center;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.6rem;
-    }
     .inner-second {
       display: flex;
+      width: 100%;
       align-items: center;
       justify-content: center;
       @media (max-width: 780px) {
@@ -112,46 +86,55 @@ export const FootNote = styled.div`
 
     button {
       display: flex;
-      align-items: center;
+      align-items: end;
       justify-content: center;
-      width: 6rem;
-      height: 2rem;
       background-color: #192133;
-      font-size: 0.4rem;
+      /* font-size: 0.4rem; */
+      padding: 6px 10px;
+      gap: 5px;
       color: white;
       border: none;
       border-radius: 5px;
       margin-left: 5px;
 
-      p:first-child {
-        position: relative;
-        bottom: 7px;
+      div {
+        max-height: 100%;
+        text-align: left;
+
+        .subtext {
+          margin-bottom: 2px;
+          font-size: 10px;
+        }
+
+        h2 {
+          font-size: 16px;
+        }
+
+        @media (max-width: 1024px) {
+          .subtext {
+            font-size: 6px;
+          }
+          h2 {
+            font-size: 10px;
+          }
+        }
       }
 
-      p {
-        margin-bottom: -6px;
+      img,
+      .apple-icon {
+        width: 1.3rem;
       }
 
-      img {
-        width: 0.8rem;
+      @media (max-width: 1024px) {
+        img,
+        .apple-icon {
+          width: 0.7rem;
+        }
       }
-
-      @media (max-width: 780px) {
-        height: 1.7rem;
-        width: 4rem;
-        font-size: 0.3rem;
-      }
-    }
-
-    @media (max-width: 780px) {
-      display: block;
-      float: right;
-      margin-right: 80px;
     }
   }
 
-  @media (max-width: 780px) {
-    display: flex;
-    direction: column;
+  @media (max-width: 640px) {
+    display: none;
   }
 `;

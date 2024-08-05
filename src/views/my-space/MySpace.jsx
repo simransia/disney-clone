@@ -8,7 +8,7 @@ import {
   selectUserName,
   setUserLoginDetails,
   setSignOutState,
-} from "../../utils/user/userSlice";
+} from "../../utils/slices/user/userSlice";
 
 const MyPage = () => {
   const dispatch = useDispatch();

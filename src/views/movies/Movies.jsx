@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectPopular,
@@ -6,8 +6,10 @@ import {
   selectTopRated,
   selectupcoming,
   setMovies,
-} from "../../utils/movies/moviesSlice";
+} from "../../utils/slices/movies/moviesSlice";
 import { ImageSlider, MediaList } from "../../components";
+import { GenereListContainer } from "../home/homeStyles";
+import { MediaListContainer } from "../../styles/globalStyle";
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -66,13 +68,15 @@ const Movies = () => {
   }, [moviesData, dispatch]);
 
   return (
-    <div>
+    <Fragment>
       <ImageSlider />
-      <MediaList movies={nowPlayingMovies} title="Now Playing" />
-      <MediaList movies={topRatedMovies} title="Top Rated" />
-      <MediaList movies={popularMovies} title="Popular" />
-      <MediaList movies={upcomingMovies} title="Upcoming" />
-    </div>
+      <MediaListContainer>
+        <MediaList movies={nowPlayingMovies} title="Now Playing" />
+        <MediaList movies={topRatedMovies} title="Top Rated" />
+        <MediaList movies={popularMovies} title="Popular" />
+        <MediaList movies={upcomingMovies} title="Upcoming" />
+      </MediaListContainer>
+    </Fragment>
   );
 };
 

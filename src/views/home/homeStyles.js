@@ -14,15 +14,19 @@ const Content = styled.div`
   padding: 0 calc(3.5vw + 5px);
   padding-left: 95px;
 
+  @media (max-width: 768px) {
+    padding: 0 calc(6vw + 5px);
+  }
+
   @media (max-width: 640px) {
-    /* padding-left: calc(3.5vw + 5px); */
-    padding-left: 0;
+    padding: 6px;
   }
 `;
 
 const GenereListContainer = styled.div`
   position: relative;
   bottom: 270px;
+  padding: 0 14px;
 
   @media (max-width: 1080px) {
     bottom: 230px;
@@ -50,6 +54,7 @@ const VideoContainer = styled.div`
     border-radius: 4px;
     height: 50px;
     overflow: hidden;
+    cursor: pointer;
 
     @media (max-width: 1024px) {
       height: 40px;
@@ -57,6 +62,10 @@ const VideoContainer = styled.div`
 
     @media (max-width: 768px) {
       height: 30px;
+    }
+
+    @media (max-width: 540px) {
+      height: 20px;
     }
   }
 
@@ -86,6 +95,10 @@ const VideoContainer = styled.div`
 
     @media (max-width: 768px) {
       top: 52%;
+    }
+
+    @media (max-width: 540px) {
+      top: 54%;
     }
   }
 `;

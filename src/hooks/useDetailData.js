@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import * as Movie from "../utils/genere/genereSlice";
+import * as Movie from "../utils/slices/genere/genereSlice";
 import db from "../utils/firebase";
+import { normalizeKeys } from "../utils/getNormalizedKeys";
 
 const useDetailData = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const useDetailData = () => {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log(doc.data());
+          console.log(doc.data(), "luminous");
           setDetailData(doc.data());
         } else {
           console.log("no such document in firebase 🔥");
@@ -40,13 +41,17 @@ const useDetailData = () => {
   useEffect(() => {
     const newSelect = selectMovieType[detailData.type] || (() => []); // Fallback selector that returns an empty array
     setSelect(() => newSelect);
-  }, [detailData.type]);
+  }, [detailData]);
 
   const movies = useSelector(select);
 
-  console.log(select, movies, "movies");
+  const details = [detailData].map(normalizeKeys);
 
-  return { movies, detailData, id };
+  const moviesList = movies?.map(normalizeKeys);
+
+  console.log(moviesList, "movies", movies);
+
+  return { movies: moviesList, detailData: details[0], id };
 };
 
 export default useDetailData;

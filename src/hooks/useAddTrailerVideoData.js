@@ -5,7 +5,7 @@ import {
   selectTrailerDetails,
   setTrailer,
   setTrailerDetails,
-} from "../utils/video/VideoSlice";
+} from "../utils/slices/video/VideoSlice";
 
 const useAddTrailerVideoData = (movieId) => {
   const dispatch = useDispatch();

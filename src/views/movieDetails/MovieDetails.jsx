@@ -12,7 +12,11 @@ import {
   DetailsContainer,
   Wrap,
 } from "./movieDetailsStyles";
-import { Carousel, Wrap as Cell } from "../../styles/globalStyle";
+import {
+  Carousel,
+  Wrap as Cell,
+  MediaListContainer,
+} from "../../styles/globalStyle";
 import useDetailData from "../../hooks/useDetailData";
 
 function MovieDetails(props) {
@@ -42,7 +46,7 @@ function MovieDetails(props) {
 
   const { movies, detailData, id } = useDetailData();
 
-  console.log(movies, detailData);
+  console.log(movies, detailData, "here");
 
   return (
     <DetailsContainer>
@@ -75,32 +79,35 @@ function MovieDetails(props) {
       </Container>
       <br />
       <br />
-      <h3>More Like This</h3>
-      <Carousel {...settings}>
-        {movies &&
-          movies.map((movie, key) =>
-            movie.id !== id ? (
-              <Link to={"/detail/" + movie.id} key={key}>
-                <Cell>
-                  <span>
-                    <h2>{movie.title}</h2>
-                    <h3>{movie.subTitle}</h3>
-                    <p className="grey">
-                      <b>{movie.description.slice(0, 55)}</b>...
-                    </p>
-                    <p className="grey">
-                      {" "}
-                      <AiOutlinePlus /> ADD TO WATCHLIST
-                    </p>
-                  </span>
-                  <img src={movie.cardImg} alt="" />
-                </Cell>
-              </Link>
-            ) : (
-              ""
-            )
-          )}
-      </Carousel>
+      {movies && movies.length > 0 && (
+        <MediaListContainer>
+          <h3>More Like This</h3>
+          <Carousel {...settings}>
+            {movies.map((movie, key) =>
+              movie.id !== id ? (
+                <Link to={"/detail/" + movie.id} key={key}>
+                  <Cell>
+                    <div>
+                      <h2>{movie.title}</h2>
+                      <h3>{movie.subTitle}</h3>
+                      <p className="grey">
+                        <b>{movie.description.slice(0, 55)}</b>...
+                      </p>
+                      <p className="grey">
+                        {" "}
+                        <AiOutlinePlus /> ADD TO WATCHLIST
+                      </p>
+                    </div>
+                    <img src={movie.cardImg} alt="" />
+                  </Cell>
+                </Link>
+              ) : (
+                ""
+              )
+            )}
+          </Carousel>
+        </MediaListContainer>
+      )}
     </DetailsContainer>
   );
 }

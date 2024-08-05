@@ -33,6 +33,9 @@ export const Container = styled.div`
     @media (max-width: 640px) {
       bottom: 40px;
     }
+    @media (max-width: 500px) {
+      bottom: 30px;
+    }
   }
 
   .loading-image {
@@ -68,6 +71,10 @@ export const Container = styled.div`
     .description {
       font-size: 14px;
       margin-bottom: 18px;
+    }
+
+    .description-mobile {
+      display: none;
     }
 
     .genres {
@@ -128,6 +135,80 @@ export const Container = styled.div`
     @media (max-width: 800px) {
       .title {
         font-size: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 10px;
+        margin-bottom: 8px;
+      }
+
+      .genres {
+        font-size: 10px;
+        margin-bottom: 8px;
+      }
+
+      button {
+        font-size: 12px;
+        padding: 8px 5px;
+
+        svg {
+          width: 8px;
+        }
+      }
+
+      button:first-child {
+        width: 65%;
+      }
+      button:nth-child(2) {
+        width: 15%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      max-width: 48%;
+      margin-top: 5%;
+
+      .title {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .description {
+        display: none;
+      }
+
+      .description-mobile {
+        display: block;
+        font-size: 10px;
+        margin-bottom: 10px;
+      }
+
+      .genres {
+        font-size: 10px;
+        margin-bottom: 8px;
+      }
+
+      button {
+        font-size: 10px;
+        padding: 5px;
+
+        svg {
+          width: 8px;
+        }
+      }
+
+      button:first-child {
+        width: 60%;
+      }
+      button:nth-child(2) {
+        width: 20%;
       }
     }
   }
