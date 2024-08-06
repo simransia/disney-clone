@@ -11,10 +11,10 @@ const Layout = ({ children }) => {
       <Navbar />
       <Container>
         <Sidebar />
-        <Content>
-          {children}
+        <div className="content-container">
+          <Content>{children}</Content>
           <Footer />
-        </Content>
+        </div>
       </Container>
       <BottomBar />
     </Fragment>

@@ -46,8 +46,6 @@ function MovieDetails(props) {
 
   const { movies, detailData, id } = useDetailData();
 
-  console.log(movies, detailData, "here");
-
   return (
     <DetailsContainer>
       <Container>

@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const DetailsContainer = styled.div`
   padding-right: 50px;
   margin-top: 10px;
+  .parent-container {
+    padding: 0 calc(2vw);
+    padding-left: 95px;
+  }
 
   h3 {
     margin-bottom: 10px;
@@ -143,7 +147,7 @@ export const Wrap = styled.div`
       height: 29rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
       height: 20rem;
       margin: 0;
     }

@@ -13,13 +13,13 @@ export const Content = styled.div`
   .content {
     position: absolute;
     width: 40%;
-    top: 20%;
+    top: 18%;
     left: 8%;
     font-family: "Inter", sans-serif;
     backdrop-filter: blur(1px);
 
     .title {
-      font-size: 45px;
+      font-size: 40px;
       font-weight: 700;
       letter-spacing: 5px;
       margin-bottom: 35px;
@@ -34,7 +34,7 @@ export const Content = styled.div`
     }
 
     .genres {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
     .btn-container {
@@ -69,12 +69,21 @@ export const Content = styled.div`
       top: 18%;
 
       .title {
-        font-size: 35px;
+        font-size: 30px;
         margin-bottom: 28px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+
+      .genres {
+        margin-bottom: 20px;
+        font-size: 15px;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
       width: 46%;
       top: 14%;
 
@@ -83,15 +92,19 @@ export const Content = styled.div`
         margin-bottom: 18px;
       }
 
-      .description,
+      .description {
+        display: none;
+      }
+
       .description-mobile {
+        display: block;
         margin-bottom: 16px;
-        font-size: 11px;
+        font-size: 12px;
       }
 
       .genres {
-        margin-bottom: 16px;
-        font-size: 10px;
+        margin-bottom: 18px;
+        font-size: 12px;
       }
 
       button {
@@ -110,10 +123,6 @@ export const Content = styled.div`
       .title {
         font-size: 18px;
         margin-bottom: 12px;
-      }
-
-      .description {
-        display: none;
       }
 
       .description-mobile {
@@ -143,7 +152,7 @@ export const Content = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     img {
       height: 50vh;
     }

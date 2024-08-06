@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Container, SignOut, UserImage, DropDown } from "./mySpaceStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth, provider } from "../../utils/firebase";
+import { MdOutlineEdit } from "react-icons/md";
 import {
   selectUserPhoto,
   selectUserName,
@@ -57,29 +58,50 @@ const MyPage = () => {
   };
 
   return (
-    <Container
-      style={{
-        backgroundImage:
-          "https://www.hotstar.com/assets-x/web/assets-ui-lib/images/stars.9c90b28001575d3d107b.svg",
-      }}
-    >
-      <img src="images/login_bg.webp" alt="" />
-      <p>Login to Disney+</p>
-      <p>
-        Start watching from where you left off, personalise for kids and more
-      </p>
-      {!username ? (
-        <button onClick={handleAuth} className="">
-          Login
-        </button>
-      ) : (
-        <SignOut>
-          <UserImage src={userphoto} alt={username}></UserImage>
-          <DropDown>
-            <span onClick={handleAuth}>Sign Out</span>
-          </DropDown>
-        </SignOut>
-      )}
+    <Container>
+      <div className="content">
+        {!username ? (
+          <Fragment>
+            <img src="images/login_bg.webp" alt="" />
+            <p>Login to Disney+</p>
+            <p className="sub-text">
+              Start watching from where you left off, personalise for kids and
+              more
+            </p>
+            <button onClick={handleAuth} className="blue-btn">
+              Login
+            </button>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div className="row">
+              <div>
+                <p className="gradient-text">Disney + Hotstart Super &gt;</p>
+              </div>
+              <div className="action-btn-container">
+                <button className="blue-btn">Upgrade</button>
+                <SignOut>
+                  <button>Logout</button>{" "}
+                  <DropDown>
+                    <span onClick={handleAuth}>Sign Out</span>
+                  </DropDown>
+                </SignOut>
+              </div>
+            </div>
+            <div className="row">
+              <div>
+                <p className="sub-heading">Profile</p>
+                <UserImage src={userphoto} alt={username}></UserImage>
+              </div>
+
+              <button className="edit-btn">
+                <MdOutlineEdit className="edit-icon" />
+                Edit
+              </button>
+            </div>
+          </Fragment>
+        )}
+      </div>
     </Container>
   );
 };

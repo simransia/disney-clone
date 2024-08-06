@@ -68,7 +68,7 @@ const Shows = () => {
   }, [moviesData, dispatch]);
 
   return (
-    <Fragment>
+    <div className="parent-container">
       <TvShowSlider />
       <MediaListContainer>
         <MediaList movies={featuringNowShows} title="Featuring Now" />
@@ -76,7 +76,7 @@ const Shows = () => {
         <MediaList movies={topRatedShows} title="Top Rated" />
         <MediaList movies={popularShows} title="Popular" />
       </MediaListContainer>
-    </Fragment>
+    </div>
   );
 };
 

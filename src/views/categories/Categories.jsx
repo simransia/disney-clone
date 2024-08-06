@@ -22,7 +22,7 @@ const Categories = () => {
   console.log(channels, "channels");
 
   return (
-    <Fragment>
+    <div className="parent-container">
       <CategoryContainer>
         <Viewers />
         <CategoryList category={languages} title="Popular Languages" />
@@ -30,7 +30,7 @@ const Categories = () => {
         <CategoryList category={genres} title="Popular Genres" />
         <CategoryList category={sports} title="Popular Sports" />
       </CategoryContainer>
-    </Fragment>
+    </div>
   );
 };
 

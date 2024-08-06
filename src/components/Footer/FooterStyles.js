@@ -79,9 +79,6 @@ export const FootNote = styled.div`
       width: 100%;
       align-items: center;
       justify-content: center;
-      @media (max-width: 780px) {
-        flex-direction: column;
-      }
     }
 
     button {
@@ -107,7 +104,7 @@ export const FootNote = styled.div`
         }
 
         h2 {
-          font-size: 16px;
+          font-size: 12px;
         }
 
         @media (max-width: 1024px) {
@@ -122,10 +119,11 @@ export const FootNote = styled.div`
 
       img,
       .apple-icon {
-        width: 1.3rem;
+        width: 1.1rem;
       }
 
       @media (max-width: 1024px) {
+        padding: 4px 6px;
         img,
         .apple-icon {
           width: 0.7rem;

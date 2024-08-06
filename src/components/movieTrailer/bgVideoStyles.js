@@ -114,6 +114,8 @@ export const Container = styled.div`
     }
 
     @media (max-width: 1160px) {
+      margin-left: 12%;
+
       .title {
         font-size: 40px;
       }
@@ -133,12 +135,16 @@ export const Container = styled.div`
       }
     }
     @media (max-width: 800px) {
+      margin-left: 13%;
+
       .title {
         font-size: 30px;
       }
     }
 
     @media (max-width: 640px) {
+      margin-left: 7%;
+
       .title {
         font-size: 18px;
         margin-bottom: 10px;

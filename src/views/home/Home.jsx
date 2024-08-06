@@ -51,8 +51,8 @@ const Home = () => {
   };
 
   return (
-    <Fragment>
-      <VideoContainer className="video-container">
+    <div className="parent-container">
+      <VideoContainer>
         <BackgroundVideo movieId={selectedID} />
         <div className="small-preview">
           <Carousel {...settings}>
@@ -89,7 +89,7 @@ const Home = () => {
         />
         <GenereList movies={disneyJuniorSeries} title="Disney Junior Series" />
       </GenereListContainer>
-    </Fragment>
+    </div>
   );
 };
 

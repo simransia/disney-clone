@@ -62,25 +62,27 @@ const Sports = () => {
   }, [moviesData, dispatch]);
 
   return (
-    <CategoryContainer>
-      {/* <ImageSlider /> */}
+    <div className="parent-container">
+      <CategoryContainer>
+        {/* <ImageSlider /> */}
 
-      <MediaListContainer>
-        <CategoryList category={sports} title="Popular Sports" />
-        <MediaList
-          movies={bingeShows?.filter((item) => item.poster_path !== null)}
-          title="Binge-worthy Sports Shows"
-        />
-        {/* <MediaList
+        <MediaListContainer>
+          <CategoryList category={sports} title="Popular Sports" />
+          <MediaList
+            movies={bingeShows?.filter((item) => item.poster_path !== null)}
+            title="Binge-worthy Sports Shows"
+          />
+          {/* <MediaList
         movies={sportMovies?.filter((item) => item.poster_path !== null)}
         title="Must-watch Sports Movies"
       /> */}
-        <MediaList
-          movies={popular?.filter((item) => item.poster_path !== null)}
-          title="Trending"
-        />
-      </MediaListContainer>
-    </CategoryContainer>
+          <MediaList
+            movies={popular?.filter((item) => item.poster_path !== null)}
+            title="Trending"
+          />
+        </MediaListContainer>
+      </CategoryContainer>
+    </div>
   );
 };
 
