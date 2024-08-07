@@ -10,6 +10,11 @@ import {
 import { MediaList } from "../../components";
 import TvShowSlider from "../../components/tvShowsSlider/tvShowSlider";
 import { MediaListContainer } from "../../styles/globalStyle";
+import {
+  API_BASE_URL,
+  API_FILTER,
+  API_OPTIONS,
+} from "../../constants/dataFetching";
 
 const Shows = () => {
   const dispatch = useDispatch();
@@ -18,17 +23,6 @@ const Shows = () => {
   const topRatedShows = useSelector(selectTopRated);
   const inTheSpotLightShows = useSelector(selectInTheSpotLight);
   const [moviesData, setMoviesData] = useState([]);
-
-  const API_BASE_URL = "https://api.themoviedb.org/3/tv/";
-
-  const API_OPTIONS = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMGMxMjEzN2YyMTIxNGEwNTljZTAzMTI2YjQ3MTdhMSIsInN1YiI6IjY2MTkyYTU3ZjlhYTQ3MDE3ZDM0OGM3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tyTcd6s8kLs1qWMgJw6rBg7Hr_B8GHfYSvMQOv7T5ec",
-    },
-  };
 
   const fetchMoviesData = async (url, setMoviesData, key) => {
     try {
@@ -42,22 +36,22 @@ const Shows = () => {
 
   useEffect(() => {
     fetchMoviesData(
-      `${API_BASE_URL}/airing_today?language=en-US&page=1`,
+      `${API_BASE_URL}/tv/airing_today${API_FILTER}`,
       setMoviesData,
       "featuringNow"
     );
     fetchMoviesData(
-      `${API_BASE_URL}/popular?language=en-US&page=1`,
+      `${API_BASE_URL}/tv/popular${API_FILTER}`,
       setMoviesData,
       "popular"
     );
     fetchMoviesData(
-      `${API_BASE_URL}/top_rated?language=en-US&page=1`,
+      `${API_BASE_URL}/tv/top_rated${API_FILTER}`,
       setMoviesData,
       "topRated"
     );
     fetchMoviesData(
-      `${API_BASE_URL}/on_the_air?language=en-US&page=1`,
+      `${API_BASE_URL}/tv/on_the_air${API_FILTER}`,
       setMoviesData,
       "inTheSpotlight"
     );
@@ -68,7 +62,7 @@ const Shows = () => {
   }, [moviesData, dispatch]);
 
   return (
-    <div className="parent-container">
+    <Fragment>
       <TvShowSlider />
       <MediaListContainer>
         <MediaList movies={featuringNowShows} title="Featuring Now" />
@@ -76,7 +70,7 @@ const Shows = () => {
         <MediaList movies={topRatedShows} title="Top Rated" />
         <MediaList movies={popularShows} title="Popular" />
       </MediaListContainer>
-    </div>
+    </Fragment>
   );
 };
 

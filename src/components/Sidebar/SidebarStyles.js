@@ -68,6 +68,12 @@ const Nav = styled.nav`
           color: white;
         }
       }
+
+      .gif {
+        position: absolute;
+        left: 8px;
+        bottom: 0px;
+      }
     }
 
     .active {

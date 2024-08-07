@@ -9,26 +9,25 @@ const Container = styled.section`
 `;
 
 const Content = styled.div`
-cursor: pointer;
-position:relative;
-padding: 15px;
-display:flex;
-justify-content:space-evenly;
-height:100vh;
-z-index:1;
-
-:after{
-  content: "";
-  width: 100%;
+  cursor: pointer;
+  position: relative;
+  padding: 15px;
+  display: flex;
+  justify-content: space-evenly;
   height: 100vh;
-  position: absolute;
-  top:15px;
-  bottom:20px
-  left: -10px;
-  overflow: hidden;
-  box-shadow: inset 0 -460px 100px 0 #030B17;
-}
+  z-index: 1;
 
+  :after {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 15px;
+    bottom: 20px;
+    left: -10px;
+    overflow: hidden;
+    box-shadow: inset 0 -460px 100px 0 #030b17;
+  }
 `;
 
 const BgImage = styled.div`

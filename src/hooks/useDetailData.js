@@ -49,8 +49,6 @@ const useDetailData = () => {
 
   const moviesList = movies?.map(normalizeKeys);
 
-  console.log(moviesList, "movies", movies);
-
   return { movies: moviesList, detailData: details[0], id };
 };
 

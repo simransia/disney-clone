@@ -28,12 +28,12 @@ export const Carousel = styled(Slider)`
   .slick-prev:before {
     content: "\f104";
     position: relative;
-    left: 4px;
+    left: 26px;
   }
   .slick-next:before {
     content: "\f105";
     position: relative;
-    right: -8px;
+    right: 10px;
   }
 
   & > button {
@@ -188,8 +188,8 @@ export const Wrap = styled.div`
     @media (max-width: 965px) {
       box-shadow: inset 220px 0 100px 0 #030b17;
     }
-    @media (max-width: 865px) {
-      box-shadow: inset 170px 0 100px 0 #030b17;
+    @media (max-width: 885px) {
+      box-shadow: inset 300px 0 100px 0 #030b17;
     }
     @media (max-width: 780px) {
       display: none;

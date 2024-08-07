@@ -1,7 +1,7 @@
 export const MOVIE_PREVIEW_DETAILS = [
   {
     id: 811634,
-    img: "https://image.tmdb.org/t/p/w500/67YXOoKGODyGvJXfXzVmgHNXYh8.jpg",
+    img: "https://image.tmdb.org/t/p/w500/jDjmnEuNUfWHg8rbW6u8mylkcO0.jpg",
   },
   {
     id: 354912,
@@ -13,6 +13,6 @@ export const MOVIE_PREVIEW_DETAILS = [
   },
   {
     id: 284053,
-    img: "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+    img: "https://image.tmdb.org/t/p/w500/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg",
   },
 ];

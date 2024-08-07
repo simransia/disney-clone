@@ -17,6 +17,8 @@ const Sidebar = () => {
 
   const { pathname } = location;
 
+  console.log(pathname === ROUTES.SEARCH, "jj");
+
   return (
     <Nav>
       <div className="navMenu">
@@ -35,6 +37,19 @@ const Sidebar = () => {
             href={ROUTES.SEARCH}
             className={pathname === ROUTES.SEARCH ? "active" : ""}
           >
+            {pathname === ROUTES.SEARCH ? (
+              ""
+            ) : (
+              <iframe
+                title="ai"
+                src="https://giphy.com/embed/IiF5JOAhMZtU97GZgZ"
+                width="40"
+                height="40"
+                className="gif"
+                frameBorder="0"
+                allowFullScreen
+              />
+            )}
             <Search /> <span>Search</span>
           </a>
           <a

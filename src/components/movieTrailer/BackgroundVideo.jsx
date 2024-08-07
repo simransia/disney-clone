@@ -14,8 +14,6 @@ const BackgroundVideo = ({ movieId }) => {
     (item) => item.movieId === movieId
   )[0];
 
-  console.log(video, details, "detail", trailerVideo, trailerVideoDetails);
-
   if (!video || !details) {
     // Render a loading state or placeholder
     const image = MOVIE_PREVIEW_DETAILS.filter((item) => item.id === movieId)[0]

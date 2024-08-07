@@ -25,8 +25,6 @@ const useAddDataToStore = () => {
 
         const type = docData.type?.trim();
 
-        console.log(type, docData); // Maps 'type' to your state keys
-
         if (type) {
           acc[type] = [...acc[type], newEntry];
         }

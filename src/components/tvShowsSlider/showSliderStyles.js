@@ -152,7 +152,7 @@ export const Content = styled.div`
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 860px) {
     img {
       height: 50vh;
     }
@@ -160,7 +160,7 @@ export const Content = styled.div`
 
   @media (max-width: 640px) {
     img {
-      height: 28vh;
+      height: 30vh;
     }
   }
 `;

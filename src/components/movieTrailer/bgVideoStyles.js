@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100vw;
   /* height: 120vh; */
   position: relative;
-  right: calc(3.5vw + 65px);
+  right: calc(3.5vw + 40px);
   overflow: hidden;
 
   iframe {
@@ -13,7 +13,7 @@ export const Container = styled.div`
     /* top: 0;
     left: 0;
     right: 0; */
-    bottom: 105px;
+    bottom: 110px;
     width: 100%;
     /* height: 100vh; */
     aspect-ratio: 16/9;
@@ -34,7 +34,7 @@ export const Container = styled.div`
       bottom: 40px;
     }
     @media (max-width: 500px) {
-      bottom: 30px;
+      bottom: 27px;
     }
   }
 
@@ -98,6 +98,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
 
     button:first-child {
@@ -135,7 +136,11 @@ export const Container = styled.div`
       }
     }
     @media (max-width: 800px) {
-      margin-left: 13%;
+      margin-left: 14%;
+
+      .genres {
+        margin-bottom: 18px;
+      }
 
       .title {
         font-size: 30px;
@@ -177,7 +182,7 @@ export const Container = styled.div`
       }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 640px) {
       max-width: 48%;
       margin-top: 5%;
 

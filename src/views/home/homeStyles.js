@@ -3,7 +3,11 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
 
-  .parent-container {
+  .content-container {
+    max-width: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
     padding: 0 calc(1vw);
     padding-left: 80px;
 
@@ -17,13 +21,6 @@ const Container = styled.div`
       /* padding-top: 54px; */
     }
   }
-
-  .content-container {
-    max-width: 100vw;
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
 `;
 
 const Content = styled.div`
@@ -34,19 +31,35 @@ const Content = styled.div`
 
 const GenereListContainer = styled.div`
   position: relative;
-  bottom: 270px;
+  bottom: 290px;
   padding: 0 14px;
 
-  @media (max-width: 1080px) {
-    bottom: 230px;
+  @media (max-width: 1320px) {
+    bottom: 270px;
   }
 
-  @media (max-width: 945px) {
-    bottom: 140px;
+  @media (max-width: 1080px) {
+    bottom: 260px;
+  }
+
+  @media (max-width: 975px) {
+    bottom: 190px;
+  }
+
+  @media (max-width: 860px) {
+    bottom: 150px;
   }
 
   @media (max-width: 768px) {
-    bottom: 80px;
+    bottom: 120px;
+  }
+
+  @media (max-width: 640px) {
+    bottom: 150px;
+  }
+
+  @media (max-width: 500px) {
+    bottom: 78px;
   }
 `;
 
@@ -88,6 +101,10 @@ const VideoContainer = styled.div`
 
     @media (max-width: 540px) {
       top: 54%;
+    }
+
+    @media (max-width: 450px) {
+      top: 55%;
     }
   }
 

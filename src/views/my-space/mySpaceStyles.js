@@ -3,6 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   font-family: "Inter", sans-serif;
   background-image: linear-gradient(to bottom, #091731, #000000);
+  width: 100vw;
+  position: absolute;
+  left: -90px;
+
+  @media (max-width: 640px) {
+    left: -4px;
+    right: -4px;
+  }
 
   .content {
     background-image: url("https://www.hotstar.com/assets-x/web/assets-ui-lib/images/stars.9c90b28001575d3d107b.svg");
@@ -13,17 +21,13 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 calc(2vw);
+    padding: 0 16px;
     padding-top: 50px;
-    padding-left: 100px;
-
-    /* @media (max-width: 768px) {
-      padding: 0 calc(6vw + 5px);
-    } */
+    padding-left: 90px;
 
     @media (max-width: 640px) {
-      padding: 10px;
-      /* padding-top: 54px; */
+      padding-left: 8px;
+      padding-right: 30px;
     }
   }
 
@@ -131,13 +135,19 @@ export const UserImage = styled.img`
 
 export const DropDown = styled.div`
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgb(19, 19, 19);
   padding: 5px;
   border: 1px solid rgba(151, 151, 151, 0.34);
   opacity: 0;
+
+  @media (max-width: 640px) {
+    width: 70%;
+    text-align: center;
+    top: 40px;
+  }
 `;
 
 export const SignOut = styled.div`

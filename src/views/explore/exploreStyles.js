@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ExploreContainer = styled.div`
-  padding-top: 30px;
+  padding-top: 80px;
 
   .input-container {
     position: relative;
@@ -22,7 +22,37 @@ export const ExploreContainer = styled.div`
       border: none;
       border-radius: 6px;
       padding: 18px;
+      padding-left: 55px;
+      font-size: 16px;
       width: 85vw;
+      ::placeholder {
+        color: gray;
+      }
+      color: white;
+    }
+
+    .gif {
+      position: absolute;
+      right: 16px;
+      bottom: -4px;
+    }
+
+    @media (max-width: 640px) {
+      input {
+        font-size: 14px;
+        width: 90vw;
+        padding-left: 35px;
+      }
+
+      svg {
+        width: 20px;
+        left: 10px;
+      }
+
+      .gif {
+        width: 40px;
+        right: 0px;
+      }
     }
   }
 `;

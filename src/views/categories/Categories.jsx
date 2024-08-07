@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import CategoryList from "../../components/categoryList/categoryList";
 import useAddCategories from "../../hooks/useAddCategoriesToStore";
 import { useSelector } from "react-redux";
@@ -19,18 +19,14 @@ const Categories = () => {
   const genres = useSelector(selectGenres);
   const sports = useSelector(selectSports);
 
-  console.log(channels, "channels");
-
   return (
-    <div className="parent-container">
-      <CategoryContainer>
-        <Viewers />
-        <CategoryList category={languages} title="Popular Languages" />
-        <CategoryList category={channels} title="Popular Channels" />
-        <CategoryList category={genres} title="Popular Genres" />
-        <CategoryList category={sports} title="Popular Sports" />
-      </CategoryContainer>
-    </div>
+    <CategoryContainer>
+      <Viewers />
+      <CategoryList category={languages} title="Popular Languages" />
+      <CategoryList category={channels} title="Popular Channels" />
+      <CategoryList category={genres} title="Popular Genres" />
+      <CategoryList category={sports} title="Popular Sports" />
+    </CategoryContainer>
   );
 };
 

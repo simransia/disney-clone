@@ -30,8 +30,6 @@ const Home = () => {
   const hitMovies = useSelector(selectHitMovies);
   const recommendedMovies = useSelector(selectRecommend);
 
-  console.log(disneyJuniorSeries, "jj");
-
   const [selectedID, setSelectedID] = useState(811634);
 
   let settings = {
@@ -51,7 +49,7 @@ const Home = () => {
   };
 
   return (
-    <div className="parent-container">
+    <Fragment>
       <VideoContainer>
         <BackgroundVideo movieId={selectedID} />
         <div className="small-preview">
@@ -89,7 +87,7 @@ const Home = () => {
         />
         <GenereList movies={disneyJuniorSeries} title="Disney Junior Series" />
       </GenereListContainer>
-    </div>
+    </Fragment>
   );
 };
 

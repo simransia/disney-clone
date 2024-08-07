@@ -12,6 +12,13 @@ export const ListContainer = styled.div`
     font-weight: 600;
     font-size: 18px;
   }
+
+  @media (max-width: 540px) {
+    margin: 20px 0;
+    .title {
+      font-size: 16px;
+    }
+  }
 `;
 
 export const Carousel = styled(Slider)`

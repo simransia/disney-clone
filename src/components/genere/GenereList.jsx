@@ -44,8 +44,6 @@ const GenereList = ({ movies, title }) => {
     }
   }, [movies]);
 
-  console.log(movies);
-
   return (
     <ListContainer>
       <p className="title">{title}</p>
