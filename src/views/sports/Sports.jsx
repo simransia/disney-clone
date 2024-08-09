@@ -28,7 +28,6 @@ const Sports = () => {
     try {
       const response = await fetch(url, API_OPTIONS);
       const data = await response.json();
-      console.log(data, "data");
       setMoviesData((prev) => ({ ...prev, [key]: data.results }));
     } catch (err) {
       console.error(err);

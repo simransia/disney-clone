@@ -1,5 +1,5 @@
 import { GiCheckMark } from "react-icons/gi";
-import { ImCross, ImArrowLeft2 } from "react-icons/im";
+import { ImArrowLeft2 } from "react-icons/im";
 import useSubscribeData from "../../hooks/useSubscribeData";
 import { Container, Content, BgImage, Subscribe } from "./WatchStyles";
 import { LuX } from "react-icons/lu";

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
@@ -6,12 +6,7 @@ import { FaPlay } from "react-icons/fa";
 import { BsPlusLg } from "react-icons/bs";
 import { IoShareSocial } from "react-icons/io5";
 import { AiOutlinePlus } from "react-icons/ai";
-import {
-  Background,
-  Container,
-  DetailsContainer,
-  Wrap,
-} from "./movieDetailsStyles";
+import { Container, DetailsContainer, Wrap } from "./movieDetailsStyles";
 import {
   Carousel,
   Wrap as Cell,

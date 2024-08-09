@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Carousel, Wrap } from "../../views/movieDetails/movieDetailsStyles";
+import { Carousel } from "../../views/movieDetails/movieDetailsStyles";
 import { TV_SHOWS_LIST } from "../../constants/tvShowsList";
 import { Content } from "./showSliderStyles";
 import { FaPlay } from "react-icons/fa";

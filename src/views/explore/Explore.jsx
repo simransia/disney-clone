@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { ExploreContainer } from "./exploreStyles";
 import openai from "../../utils/openai";
-import {
-  API_BASE_URL,
-  API_FILTER,
-  API_OPTIONS,
-} from "../../constants/dataFetching";
+import { API_BASE_URL, API_OPTIONS } from "../../constants/dataFetching";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setGptMovies,
