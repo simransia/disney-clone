@@ -99,10 +99,11 @@ const Subscribe = styled.div`
     top: 20px;
     left: 15px;
     color: #9d9fa3;
+    width: 1.8rem;
   }
   .text {
     position: absolute;
-    top: 54px;
+    top: 45px;
     left: 45px;
     margin-left: 5px;
     border: none;
@@ -153,6 +154,10 @@ const Subscribe = styled.div`
       @media (max-width: 550px) {
         justify-content: center;
       }
+    }
+
+    @media (max-width: 640px) {
+      padding: 30px 16px 20px 16px;
     }
   }
   .movies {
@@ -279,6 +284,33 @@ const Subscribe = styled.div`
   @media (max-width: 768px) {
     font-size: 10px;
     margin-top: 10vh;
+  }
+
+  @media (max-width: 640px) {
+    margin-top: 22vh;
+
+    .logo {
+      width: 12%;
+      left: 35px;
+    }
+    .text {
+      top: 20px;
+      left: 30px;
+    }
+
+    .arrow {
+      font-size: 16px;
+      top: 16px;
+    }
+
+    .subscribe {
+      font-size: 18px;
+    }
+
+    .premium,
+    .super {
+      bottom: 11px;
+    }
   }
 `;
 

@@ -11,7 +11,7 @@ const WatchMovie = () => {
     <Container>
       <Content>
         <Subscribe>
-          <ImArrowLeft2 className="arrow" style={{ fontSize: "1.8rem" }} />
+          <ImArrowLeft2 className="arrow" />
           <img className="logo" src="/images/logo.svg" alt="Disney" />
           <p className="text">
             Select Plan <span className="grey">&gt; Log in &gt; Pay</span>{" "}
