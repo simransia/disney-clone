@@ -9,6 +9,7 @@ import {
 import tvShowReducer from "../slices/tvShows/tvShowSlice";
 import sportsReducer from "../slices/sports/sportsSlice";
 import categoryReducer from "../slices/categories/categoriesSlice";
+import gptMoviesReducer from "../slices/gptMovies/gptMoviesSlice";
 
 export default configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export default configureStore({
     category: categoryReducer,
     movieVideo: movieVideoReducer,
     movieVideoDetails: movieVideoDetailsReducer,
+    gptMovies: gptMoviesReducer,
   },
 
   middleware: getDefaultMiddleware({

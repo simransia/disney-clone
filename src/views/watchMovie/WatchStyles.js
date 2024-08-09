@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
+  /* height: 100vh; */
+  /* padding-left: 80px; */
 `;
 
 const Content = styled.div`
@@ -14,7 +16,7 @@ const Content = styled.div`
   padding: 15px;
   display: flex;
   justify-content: space-evenly;
-  height: 100vh;
+  /* height: 100vh; */
   z-index: 1;
 
   :after {
@@ -22,10 +24,10 @@ const Content = styled.div`
     width: 100%;
     height: 100vh;
     position: absolute;
-    top: 15px;
+    top: 0px;
     bottom: 20px;
     left: -10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: inset 0 -460px 100px 0 #030b17;
   }
 `;
@@ -60,12 +62,13 @@ const BgImage = styled.div`
 `;
 
 const Subscribe = styled.div`
-  margin-top: 34vh;
+  margin-top: 20vh;
   z-index: 2;
   opacity: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 100%;
 
   .card {
     margin: auto;
@@ -99,7 +102,7 @@ const Subscribe = styled.div`
   }
   .text {
     position: absolute;
-    top: 45px;
+    top: 54px;
     left: 45px;
     margin-left: 5px;
     border: none;
@@ -107,9 +110,9 @@ const Subscribe = styled.div`
     font-weight: bold;
   }
 
-  .btn {
+  .login-btn {
     position: absolute;
-    top: 4px;
+    top: 20px;
     right: 25px;
     width: 5rem;
   }
@@ -120,8 +123,9 @@ const Subscribe = styled.div`
   }
   .subs {
     background-color: #182031;
-    width: 60rem;
-    height: 40rem;
+    width: 100%;
+    margin: 0 auto;
+    /* height: rem; */
     margin-top: 15px;
     margin-bottom: 20px;
     border-radius: 7px;
@@ -129,7 +133,7 @@ const Subscribe = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 30px;
+    padding: 35px 30px 25px 30px;
 
     .first {
       display: flex;
@@ -143,23 +147,27 @@ const Subscribe = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 50rem;
-      margin-bottom: 10px;
+      width: 100%;
+      margin-bottom: 20px;
 
-      @media (max-width: 830px) {
-        width: 40rem;
-      }
       @media (max-width: 550px) {
         justify-content: center;
       }
     }
   }
   .movies {
-    font-size: 12px;
-    color: #1c69b6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-    @media (max-width: 550px) {
-      font-size: 8px;
+    span {
+      display: block;
+      font-size: 12px;
+      color: #1c69b6;
+
+      @media (max-width: 550px) {
+        font-size: 8px;
+      }
     }
   }
 
@@ -168,9 +176,11 @@ const Subscribe = styled.div`
   .premium-box-two {
     border: 1px solid #333;
     border-radius: 5px;
+    padding: 8px 0;
     padding-left: 15px;
     width: 18vw;
     text-align: left;
+    margin-right: 10px;
 
     @media (max-width: 768px) {
       margin: 0 10px;
@@ -189,6 +199,19 @@ const Subscribe = styled.div`
     }
   }
 
+  p {
+    /* padding: 10px 0; */
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    min-height: 45px;
+
+    .cross {
+      font-size: 20px;
+    }
+  }
+
   .selected {
     background-color: #174373;
     border: 1px solid #1f80e0;
@@ -201,7 +224,20 @@ const Subscribe = styled.div`
   .premium,
   .super {
     width: 14vw;
+    padding: 10px 0;
+    position: relative;
+    bottom: 14px;
+    border-radius: 6px;
+
+    h4 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      justify-content: center;
+    }
   }
+
   .current-plan {
     background: #1e2a48;
     border-bottom: 1px solid #1e2a48;
@@ -211,8 +247,8 @@ const Subscribe = styled.div`
       color: #febd57;
     }
 
-    hr {
-      visibility: hidden;
+    p {
+      border-bottom: none;
     }
   }
   .rupee {
@@ -220,29 +256,21 @@ const Subscribe = styled.div`
     position: relative;
     top: -3px;
   }
-  hr {
-    border: none;
-    height: 1px;
-    color: #333;
-    background-color: #333;
-  }
+
   button {
     background-color: #1f80e0;
     font-size: 16px;
     border-radius: 4px;
     color: white;
-    width: 50rem;
+    width: 100%;
     border: none;
     height: 35px;
-    margin: 20px;
 
     @media (max-width: 830px) {
-      width: 40rem;
       height: 28px;
     }
 
     @media (max-width: 550px) {
-      width: 22rem;
       height: 25px;
       font-size: 12px;
     }
