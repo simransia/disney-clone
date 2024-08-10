@@ -6,20 +6,13 @@ import { normalizeKeys } from "../../utils/getNormalizedKeys";
 
 const GenereList = ({ movies, title }) => {
   const [movieList, setMovieList] = useState([]);
-
   let settings = {
     infinite: false,
     slidesToShow: 8,
     slidesToScroll: 4,
+    initialSlide: 0,
 
     responsive: [
-      {
-        breakpoint: 1220,
-        settings: {
-          slidesToShow: 6,
-          slidesToScroll: 4,
-        },
-      },
       {
         breakpoint: 1024,
         settings: {
