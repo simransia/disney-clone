@@ -54,10 +54,11 @@ const Home = () => {
         <BackgroundVideo movieId={selectedID} />
         <div className="small-preview">
           <Carousel {...settings}>
-            {MOVIE_PREVIEW_DETAILS.map((item) => (
+            {MOVIE_PREVIEW_DETAILS.map((item, index) => (
               <div
                 onClick={() => setSelectedID(item.id)}
                 className={`card-container`}
+                key={index}
               >
                 <div
                   className={`card ${

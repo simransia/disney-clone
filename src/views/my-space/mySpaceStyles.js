@@ -21,13 +21,13 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 16px;
+    padding: 0 30px;
     padding-top: 50px;
-    padding-left: 90px;
+    padding-left: 110px;
 
     @media (max-width: 640px) {
-      padding-left: 8px;
-      padding-right: 30px;
+      padding: 10px;
+      padding-right: 20px;
     }
   }
 
@@ -39,6 +39,7 @@ export const Container = styled.div`
 
   .sub-text {
     margin-bottom: 30px;
+    text-align: center;
   }
 
   .gradient-text {

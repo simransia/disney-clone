@@ -10,7 +10,6 @@ const gptMovieSlice = createSlice({
   reducers: {
     setGptMovies: (state, action) => {
       const { movies } = action.payload;
-      console.log(movies, "inside state");
       state.movies = movies;
     },
   },

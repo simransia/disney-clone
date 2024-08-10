@@ -53,8 +53,6 @@ const useAddDataToStore = () => {
         const type = normalizedDocData.type?.trim();
         const categoryKey = typeToCategoryKey(type);
 
-        console.log(type, normalizedDocData); // Maps 'type' to your state keys
-
         if (categoryKey) {
           acc[categoryKey] = [...acc[categoryKey], newEntry];
         }

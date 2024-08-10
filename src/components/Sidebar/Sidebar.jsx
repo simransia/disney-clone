@@ -17,8 +17,6 @@ const Sidebar = () => {
 
   const { pathname } = location;
 
-  console.log(pathname === ROUTES.SEARCH, "jj");
-
   return (
     <Nav>
       <div className="navMenu">

@@ -18,7 +18,7 @@ const BackgroundVideo = ({ movieId }) => {
     // Render a loading state or placeholder
     const image = MOVIE_PREVIEW_DETAILS.filter((item) => item.id === movieId)[0]
       .img;
-    console.log(image);
+
     return (
       <Container className="">
         <img src={image} alt="" className="loading-image" />
@@ -54,7 +54,7 @@ const BackgroundVideo = ({ movieId }) => {
           </p>
           <p className="genres">
             {details?.genres?.map((item, ind) => (
-              <span>
+              <span key={ind}>
                 {item.name} {ind + 1 !== details.genres.length ? "| " : ""}
               </span>
             ))}
